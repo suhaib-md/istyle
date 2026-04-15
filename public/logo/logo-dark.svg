@@ -1,0 +1,21 @@
+<!-- I Style Leathers — Light logo (dark marks on light/cream background) -->
+<!-- PLACEHOLDER: Replace with real SVG logo from brand assets -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" aria-label="I Style Leathers">
+  <!-- Outer ring -->
+  <circle cx="80" cy="80" r="74" stroke="#351710" stroke-width="2" fill="none"/>
+  <circle cx="80" cy="80" r="66" stroke="#351710" stroke-width="0.75" fill="none"/>
+  <!-- Top arc text placeholder -->
+  <path id="top-arc" d="M 20 80 A 60 60 0 0 1 140 80" fill="none"/>
+  <text font-family="Georgia, serif" font-size="10" font-weight="600" fill="#351710" letter-spacing="3">
+    <textPath href="#top-arc" startOffset="10%">I STYLE LEATHERS</textPath>
+  </text>
+  <!-- Bottom arc text placeholder -->
+  <path id="bot-arc" d="M 20 80 A 60 60 0 0 0 140 80" fill="none"/>
+  <text font-family="Georgia, serif" font-size="8" fill="#351710" letter-spacing="2">
+    <textPath href="#bot-arc" startOffset="20%">TIMELESS STYLE</textPath>
+  </text>
+  <!-- Center motif — stylised sandal/loop -->
+  <ellipse cx="80" cy="76" rx="18" ry="8" stroke="#351710" stroke-width="1.5" fill="none"/>
+  <ellipse cx="80" cy="84" rx="18" ry="8" stroke="#351710" stroke-width="1.5" fill="none"/>
+  <line x1="62" y1="80" x2="98" y2="80" stroke="#351710" stroke-width="1"/>
+</svg>

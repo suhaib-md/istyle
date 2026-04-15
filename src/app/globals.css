@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+:root {
+  --font-noto-serif: "Noto Serif";
+  --font-manrope: "Manrope";
+}
+
+/* ============================================================
+   DESIGN TOKENS — I Style Leathers
+   Tailwind v4: all tokens live here under @theme
+   ============================================================ */
+
+@theme {
+  /* --- Fonts --- */
+  --font-serif: var(--font-noto-serif);
+  --font-sans: var(--font-manrope);
+
+  /* --- Core Palette --- */
+  --color-leather-brown: #351710;
+  --color-russet: #8e4e25;
+  --color-warm-cream: #fff8f6;
+  --color-parchment: #f1e6e2;
+  --color-warm-sand: #fdf1ee;
+
+  /* --- Accent Palette --- */
+  --color-sage-teal: #4a7a6e;
+  --color-aged-brass: #cba72f;
+
+  /* --- Surface Variants --- */
+  --color-surface-low: #fdf1ee;
+  --color-surface-mid: #f7ebe8;
+  --color-surface-high: #f1e6e2;
+  --color-outline: #d5c3be;
+  --color-on-surface-variant: #514441;
+
+  /* --- WhatsApp --- */
+  --color-whatsapp: #25d366;
+
+  /* --- Border Radius --- */
+  --radius-DEFAULT: 2px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-pill: 999px;
+  --radius-none: 0px;
+
+  /* --- Type Scale: Font Sizes --- */
+  --text-display-xl: 5.5rem;
+  --text-display-lg: 3.75rem;
+  --text-headline-lg: 2.75rem;
+  --text-headline-md: 2rem;
+  --text-headline-sm: 1.5rem;
+  --text-body-lg: 1.125rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label-lg: 0.875rem;
+  --text-label-sm: 0.6875rem;
+
+  /* --- Type Scale: Line Heights --- */
+  --text-display-xl--line-height: 1;
+  --text-display-lg--line-height: 1.05;
+  --text-headline-lg--line-height: 1.1;
+  --text-headline-md--line-height: 1.2;
+  --text-headline-sm--line-height: 1.3;
+  --text-body-lg--line-height: 1.6;
+  --text-body-md--line-height: 1.6;
+  --text-body-sm--line-height: 1.5;
+  --text-label-lg--line-height: 1.4;
+  --text-label-sm--line-height: 1.2;
+
+  /* --- Container max width --- */
+  --container-8xl: 1440px;
+}
+
+/* ============================================================
+   GLOBAL RESETS & BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #fff8f6;
+  color: #351710;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, blockquote {
+  margin: 0;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+.font-serif {
+  font-family: var(--font-noto-serif), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.label-sm-caps {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SCROLLBAR UTILITIES
+   ============================================================ */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================================
+   FOCUS RING (accessibility)
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid #4a7a6e;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   SCROLL SNAP (image carousels)
+   ============================================================ */
+
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================================
+   SAFE AREA UTILITIES (iOS bottom bar)
+   ============================================================ */
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
