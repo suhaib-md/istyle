@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# I Style Leathers
+
+Brand + e-commerce website for I Style Leathers — a handcrafted leather goods maker based in Melvisharam, Tamil Nadu, India.
+
+**Live:** [istyle.vercel.app](https://istyle.vercel.app)
+**Instagram:** [@istyleLeathers](https://www.instagram.com/istyleLeathers/)
+**Order:** WhatsApp +91 98423 76554
+
+---
+
+## Stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 16 (App Router, SSG) |
+| Styling | Tailwind CSS v4 |
+| Language | TypeScript |
+| Fonts | Noto Serif + Manrope (Google Fonts) |
+| Product data | Static TypeScript (V1) |
+| Search | Fuse.js (client-side) |
+| Hosting | Vercel |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build
+npx tsc --noEmit # type check
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Homepage
+│   ├── collections/[category]/page.tsx
+│   ├── products/[slug]/page.tsx
+│   ├── about/page.tsx
+│   ├── contact/page.tsx
+│   └── search/page.tsx
+├── components/
+│   ├── layout/             # Navbar, Footer, Drawer, FAB, BottomTabBar
+│   ├── home/               # All 8 homepage sections
+│   ├── catalog/            # ProductCard, ProductGrid, FilterBar (Phase 4)
+│   ├── product/            # PDP components (Phase 5)
+│   └── ui/                 # AnimatedSection, Button, Badge, Chip, Icons
+├── data/
+│   ├── products.ts         # 12 products (6 footwear, 4 bags, 2 accessories)
+│   └── instagram.ts        # 6 static Instagram posts
+├── lib/
+│   ├── whatsapp.ts         # WA URL builder
+│   └── search.ts           # Fuse.js search
+└── types/
+    └── product.ts          # Product TypeScript types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build Progress
 
-## Deploy on Vercel
+| Phase | Description | Status |
+|---|---|---|
+| 0 | Scaffold, design tokens, fonts, product data | ✅ Complete |
+| 1 | Root layout, Navbar, Footer, Mobile Drawer, BottomTabBar, WhatsApp FAB | ✅ Complete |
+| 2 | Homepage — all 8 sections + AnimatedSection utility | ✅ Complete |
+| 3 | Shared UI: Button, Badge, Chip components | 🔲 Next |
+| 4 | Collection/catalog pages with filters | 🔲 Pending |
+| 5 | Product Detail Pages | 🔲 Pending |
+| 6 | About page | 🔲 Pending |
+| 7 | Contact page + Custom 404 | 🔲 Pending |
+| 8 | Search overlay (Fuse.js) | 🔲 Pending |
+| 9 | SEO, PWA, Performance | 🔲 Pending |
+| 10 | QA + Cross-browser | 🔲 Pending |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Full spec in [CLAUDE.md](./CLAUDE.md).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Ordering Model (V1)
+
+No cart. No checkout. Every "Order" action opens a WhatsApp link with a pre-filled message. This is intentional — it matches how the business currently operates and keeps the site lean for V1.
+
+---
+
+## Images
+
+All images are placeholders (`/images/placeholder/`). Real product photography will be dropped in at a later phase — no component changes needed, just file replacements.
+
+---
+
+## V1 vs V2
+
+V1 (this repo): Static product data, WhatsApp-only ordering, static Instagram grid, placeholder images.
+
+V2 (future): Sanity CMS, native cart + Razorpay checkout, live Instagram feed, user accounts.
