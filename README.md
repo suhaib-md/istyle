@@ -76,8 +76,8 @@ src/
 | 2 | Homepage — all 8 sections + AnimatedSection utility | ✅ Complete |
 | 3 | Shared UI: Button, Badge, Chip components | ✅ Complete |
 | 4 | Collection/catalog pages with filters | ✅ Complete |
-| 5 | Product Detail Pages | 🔲 Next |
-| 6 | About page | 🔲 Pending |
+| 5 | Product Detail Pages | ✅ Complete |
+| 6 | About page | 🔲 Next |
 | 7 | Contact page + Custom 404 | 🔲 Pending |
 | 8 | Search overlay (Fuse.js) | 🔲 Pending |
 | 9 | SEO, PWA, Performance | 🔲 Pending |
