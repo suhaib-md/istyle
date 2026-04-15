@@ -77,8 +77,8 @@ src/
 | 3 | Shared UI: Button, Badge, Chip components | ✅ Complete |
 | 4 | Collection/catalog pages with filters | ✅ Complete |
 | 5 | Product Detail Pages | ✅ Complete |
-| 6 | About page | 🔲 Next |
-| 7 | Contact page + Custom 404 | 🔲 Pending |
+| 6 | About page | ✅ Complete |
+| 7 | Contact page + Custom 404 | 🔲 Next |
 | 8 | Search overlay (Fuse.js) | 🔲 Pending |
 | 9 | SEO, PWA, Performance | 🔲 Pending |
 | 10 | QA + Cross-browser | 🔲 Pending |

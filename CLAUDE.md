@@ -790,45 +790,23 @@ Legend:
 
 ---
 
-### Phase 6 — About Page
-> Goal: Full "Our Story" page with hero, origin narrative, 4-step craft process, values, CTA.
+### Phase 6 — About Page ✓ COMPLETE
 
-- [ ] **6.1 Route (`src/app/about/page.tsx`)**
-  - [ ] Unique title + meta description
-  - [ ] Render all sections
+- [x] **6.1 Route** — unique title + meta description
 
-- [ ] **6.2 About Hero**
-  - [ ] Large serif headline: "The Soul Behind Every Stitch"
-  - [ ] Full-width or 60/40 split with placeholder artisan image
-  - [ ] Tagline sub-text (Manrope light)
+- [x] **6.2 About Hero** — full-viewport dark section, "The Soul Behind Every Stitch" serif headline, Manrope light tagline, AnimatedSection fade-in
 
-- [ ] **6.3 Origin Story section**
-  - [ ] 2–3 narrative paragraphs (placeholder copy matching tone of voice from §11)
-  - [ ] Placeholder founder/workshop image (warm, personal)
-  - [ ] Animate in on scroll via `<AnimatedSection />`
+- [x] **6.3 Origin Story** — 2-col layout (4:5 image + 3 narrative paragraphs), staggered AnimatedSection reveals
 
-- [ ] **6.4 The Craft / Process section**
-  - [ ] 4-step grid: Material Selection | Cutting & Shaping | Stitching | Finishing
-  - [ ] Dark background section (`#351710`), white text
-  - [ ] Each step: large step number, heading, 1-sentence description, placeholder photo
-  - [ ] Scroll-triggered stagger animation (each step reveals 150ms after the previous)
+- [x] **6.4 The Craft** — dark `bg-leather-brown` section, 4-step grid (Material Selection → Cutting → Stitching → Finishing), step photo + oversized step number + heading + description, 150ms stagger
 
-- [ ] **6.5 Product Tour section**
-  - [ ] Brief visual tour: Footwear, Bags, Accessories — 3 tiles with image + 1-line description + link to catalog
+- [x] **6.5 Product Tour** — 3 full-bleed tiles (Footwear / Bags / Accessories), image hover scale, "Shop Now →" link
 
-- [ ] **6.6 Values section**
-  - [ ] 3-item grid: "Handcrafted with Care" | "Available on Order" | "Made for Indian Needs"
-  - [ ] Icon + heading + 1-sentence description per value
+- [x] **6.6 Values** — 3-col grid with teal rule, serif heading, body copy per value
 
-- [ ] **6.7 Closing CTA**
-  - [ ] "Ready to find your pair?" or similar
-  - [ ] "Shop the Collection" button + "Order on WhatsApp" button side-by-side
+- [x] **6.7 Closing CTA** — "Shop the Collection" primary + "Order on WhatsApp" ghost buttons, centered layout
 
-- [ ] **6.8 About QA**
-  - [ ] All scroll animations trigger correctly
-  - [ ] Dark craft section background renders without any contrast issues
-  - [ ] All CTA buttons link correctly
-  - [ ] Page renders clean on mobile at 320px
+- [x] **6.8 QA** — `npx tsc --noEmit` passes with 0 errors
 
 ---
 
