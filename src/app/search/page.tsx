@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import SearchResults from "./SearchResults";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -7,15 +9,23 @@ export const metadata: Metadata = {
 
 export default function SearchPage() {
   return (
-    <section className="mx-auto flex min-h-[50vh] w-full max-w-[960px] flex-col justify-center px-6 py-16 lg:px-12">
-      <p className="label-sm-caps text-sage-teal">Phase 1 Foundation</p>
-      <h1 className="mt-4 font-serif text-headline-lg text-leather-brown">
-        Search will arrive in Phase 8.
-      </h1>
-      <p className="mt-4 max-w-[60ch] font-sans text-body-lg text-on-surface-variant">
-        The search helper is already in the codebase; the dedicated overlay and
-        results experience are still pending.
-      </p>
-    </section>
+    <div className="max-w-8xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+      <div className="mb-8">
+        <p className="label-sm-caps text-sage-teal mb-3">Search</p>
+        <h1 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg">
+          Find What You&apos;re Looking For
+        </h1>
+      </div>
+
+      <Suspense
+        fallback={
+          <p className="font-sans text-body-md text-on-surface-variant py-12 text-center">
+            Searching…
+          </p>
+        }
+      >
+        <SearchResults />
+      </Suspense>
+    </div>
   );
 }

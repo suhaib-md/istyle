@@ -1,0 +1,38 @@
+"use client";
+
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  type ReactNode,
+} from "react";
+
+interface SearchContextValue {
+  isOpen: boolean;
+  open: () => void;
+  close: () => void;
+}
+
+const SearchContext = createContext<SearchContextValue>({
+  isOpen: false,
+  open: () => {},
+  close: () => {},
+});
+
+export function SearchProvider({ children }: { children: ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => setIsOpen(false), []);
+
+  return (
+    <SearchContext.Provider value={{ isOpen, open, close }}>
+      {children}
+    </SearchContext.Provider>
+  );
+}
+
+export function useSearchOverlay() {
+  return useContext(SearchContext);
+}

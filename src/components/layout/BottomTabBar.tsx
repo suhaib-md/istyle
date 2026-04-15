@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMobileMenu } from "./MobileMenuContext";
+import { useSearchOverlay } from "./SearchContext";
 import {
   HomeIcon,
   ShoppingBagIcon,
@@ -13,7 +14,6 @@ import {
 const tabs = [
   { id: "home", label: "Home", href: "/", icon: HomeIcon },
   { id: "shop", label: "Shop", href: "/collections", icon: ShoppingBagIcon },
-  { id: "search", label: "Search", href: "/search", icon: SearchIcon },
   // Cart is V2 — shown disabled
   {
     id: "cart",
@@ -27,6 +27,7 @@ const tabs = [
 export default function BottomTabBar() {
   const pathname = usePathname();
   const { open } = useMobileMenu();
+  const { open: openSearch } = useSearchOverlay();
 
   function isActive(href: string | null) {
     if (!href) return false;
@@ -88,6 +89,20 @@ export default function BottomTabBar() {
           </Link>
         ) : null
       )}
+
+      {/* Search — opens the search overlay */}
+      <button
+        onClick={openSearch}
+        aria-label="Search"
+        className="
+          flex-1 flex flex-col items-center justify-center gap-0.5 pt-2
+          min-h-11 text-on-surface-variant hover:text-leather-brown
+          transition-colors duration-150
+        "
+      >
+        <SearchIcon size={22} aria-hidden />
+        <span className="text-[10px] font-sans font-medium">Search</span>
+      </button>
 
       {/* Menu — opens the mobile drawer */}
       <button

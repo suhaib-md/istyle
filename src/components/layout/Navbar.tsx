@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMobileMenu } from "./MobileMenuContext";
+import { useSearchOverlay } from "./SearchContext";
 import SiteLogo from "./SiteLogo";
 import {
   MenuIcon,
@@ -37,7 +38,7 @@ function Dropdown({ items }: { items: { label: string; href: string }[] }) {
     >
       <ul
         className="
-          min-w-[180px] bg-warm-cream border border-outline
+          min-w-45 bg-warm-cream border border-outline
           shadow-lg py-1
         "
       >
@@ -113,6 +114,7 @@ function NavItem({
 export default function Navbar() {
   const pathname = usePathname();
   const { open } = useMobileMenu();
+  const { open: openSearch } = useSearchOverlay();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -138,7 +140,7 @@ export default function Navbar() {
         ${scrolled ? "py-2 shadow-sm" : "py-4"}
       `}
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-8xl mx-auto px-6 lg:px-12">
         <div className="hidden lg:flex items-center justify-between gap-8">
           <SiteLogo priority />
 
@@ -164,8 +166,8 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-1">
-            <Link
-              href="/search"
+            <button
+              onClick={openSearch}
               aria-label="Search"
               className="
                 w-10 h-10 flex items-center justify-center rounded-sm
@@ -174,7 +176,7 @@ export default function Navbar() {
               "
             >
               <SearchIcon size={20} />
-            </Link>
+            </button>
             <button
               disabled
               aria-label="Cart (coming soon)"
@@ -204,8 +206,8 @@ export default function Navbar() {
           <SiteLogo priority />
 
           <div className="flex items-center -mr-2">
-            <Link
-              href="/search"
+            <button
+              onClick={openSearch}
               aria-label="Search"
               className="
                 w-11 h-11 flex items-center justify-center
@@ -214,7 +216,7 @@ export default function Navbar() {
               "
             >
               <SearchIcon size={20} />
-            </Link>
+            </button>
             <button
               disabled
               aria-label="Cart (coming soon)"

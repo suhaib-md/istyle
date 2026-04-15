@@ -829,29 +829,29 @@ Legend:
 
 ---
 
-### Phase 8 — Search
+### Phase 8 — Search ✓ COMPLETE
 > Goal: Functional search overlay with live results using Fuse.js.
 
-- [ ] **8.1 Search route (`src/app/search/page.tsx`)**
-  - [ ] Reads `q` query param, runs `searchProducts(q)`, renders results
-  - [ ] Handles empty query (show "Start typing to search") and no-results state ("No results for 'X'. Try browsing our collections or chat with us on WhatsApp.")
+- [x] **8.1 Search route (`src/app/search/page.tsx`)**
+  - [x] Reads `q` query param, runs `searchProducts(q)`, renders results
+  - [x] Handles empty query (show "Start typing to search") and no-results state ("No results for 'X'. Try browsing our collections or chat with us on WhatsApp.")
 
-- [ ] **8.2 Search overlay component**
-  - [ ] Full-width modal that opens on click of Search icon in nav
-  - [ ] Input auto-focuses when opened
-  - [ ] Live results appear below as user types (debounced 200ms)
-  - [ ] Each result: product image (40px square) + name + price
-  - [ ] Clicking result → navigates to PDP, closes overlay
-  - [ ] Keyboard: Escape closes, Arrow keys navigate results
-  - [ ] Close on backdrop click
-  - [ ] `'use client'` component
+- [x] **8.2 Search overlay component**
+  - [x] Full-width modal that opens on click of Search icon in nav
+  - [x] Input auto-focuses when opened
+  - [x] Live results appear below as user types (debounced 200ms)
+  - [x] Each result: product image (40px square) + name + price
+  - [x] Clicking result → navigates to PDP, closes overlay
+  - [x] Keyboard: Escape closes, Arrow keys navigate results
+  - [x] Close on backdrop click
+  - [x] `'use client'` component
 
-- [ ] **8.3 Search QA**
-  - [ ] Live results appear within 200ms of typing
-  - [ ] Keyboard navigation works
-  - [ ] No-results state renders correctly
-  - [ ] Escape closes the overlay
-  - [ ] Search icon in bottom tab bar opens overlay on mobile
+- [x] **8.3 Search QA**
+  - [x] Live results appear within 200ms of typing
+  - [x] Keyboard navigation works
+  - [x] No-results state renders correctly
+  - [x] Escape closes the overlay
+  - [x] Search icon in bottom tab bar opens overlay on mobile
 
 ---
 

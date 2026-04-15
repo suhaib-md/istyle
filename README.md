@@ -79,8 +79,8 @@ src/
 | 5 | Product Detail Pages | ✅ Complete |
 | 6 | About page | ✅ Complete |
 | 7 | Contact page + Custom 404 | ✅ Complete |
-| 8 | Search overlay (Fuse.js) | 🔲 Next |
-| 9 | SEO, PWA, Performance | 🔲 Pending |
+| 8 | Search overlay (Fuse.js) | ✅ Complete |
+| 9 | SEO, PWA, Performance | 🔲 Next |
 | 10 | QA + Cross-browser | 🔲 Pending |
 
 Full spec in [CLAUDE.md](./CLAUDE.md).

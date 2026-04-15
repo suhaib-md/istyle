@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { MobileMenuProvider } from "@/components/layout/MobileMenuContext";
+import { SearchProvider } from "@/components/layout/SearchContext";
+import SearchOverlay from "@/components/layout/SearchOverlay";
 import Navbar from "@/components/layout/Navbar";
 import MobileDrawer from "@/components/layout/MobileDrawer";
 import BottomTabBar from "@/components/layout/BottomTabBar";
@@ -66,6 +68,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col antialiased">
         <MobileMenuProvider>
+          <SearchProvider>
+          <SearchOverlay />
           <Navbar />
           <MobileDrawer />
           <main
@@ -80,6 +84,7 @@ export default function RootLayout({
           <Footer />
           <WhatsAppFAB />
           <BottomTabBar />
+          </SearchProvider>
         </MobileMenuProvider>
       </body>
     </html>
