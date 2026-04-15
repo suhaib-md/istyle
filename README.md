@@ -74,8 +74,8 @@ src/
 | 0 | Scaffold, design tokens, fonts, product data | ✅ Complete |
 | 1 | Root layout, Navbar, Footer, Mobile Drawer, BottomTabBar, WhatsApp FAB | ✅ Complete |
 | 2 | Homepage — all 8 sections + AnimatedSection utility | ✅ Complete |
-| 3 | Shared UI: Button, Badge, Chip components | 🔲 Next |
-| 4 | Collection/catalog pages with filters | 🔲 Pending |
+| 3 | Shared UI: Button, Badge, Chip components | ✅ Complete |
+| 4 | Collection/catalog pages with filters | 🔲 Next |
 | 5 | Product Detail Pages | 🔲 Pending |
 | 6 | About page | 🔲 Pending |
 | 7 | Contact page + Custom 404 | 🔲 Pending |

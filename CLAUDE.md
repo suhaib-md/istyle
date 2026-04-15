@@ -700,27 +700,22 @@ Legend:
 
 ---
 
-### Phase 3 — Shared UI Components
-> Goal: Reusable `Button`, `Badge`, `Chip` components used consistently across all pages.
+### Phase 3 — Shared UI Components ✓ COMPLETE
 
-- [ ] **3.1 Button (`src/components/ui/Button.tsx`)**
-  - [ ] Variants: `primary` (leather-brown bg, white text), `ghost` (transparent bg, leather-brown border + text), `whatsapp` (#25D366 bg, white text + WA icon), `link` (no bg/border, underline)
-  - [ ] Sizes: `sm`, `md`, `lg`
-  - [ ] `borderRadius: 2px` on all variants
-  - [ ] Hover state: `primary` → russet bg; `ghost` → leather-brown bg, white text
-  - [ ] Transition: `all 300ms ease`
-  - [ ] `disabled` state styling
-  - [ ] Forwards `href` prop → renders as `<a>` (or `<Link>`) when provided, else `<button>`
+- [x] **3.1 Button (`src/components/ui/Button.tsx`)**
+  - [x] Variants: `primary`, `ghost`, `whatsapp` (with WA icon), `link`
+  - [x] Sizes: `sm`, `md`, `lg`
+  - [x] `borderRadius: 2px`, hover/disabled states, `transition-colors duration-200`
+  - [x] Renders `<Link>` for internal hrefs, `<a>` for external, `<button>` otherwise
 
-- [ ] **3.2 Badge (`src/components/ui/Badge.tsx`)**
-  - [ ] Variants: `new` (sage-teal bg, white text), `limited` (aged-brass bg, white text), `in-stock` (green), `on-order` (outline, muted)
-  - [ ] label-sm typography (11–12px, ALL CAPS, letter-spacing 0.2em)
-  - [ ] Pill shape (`rounded-full`)
+- [x] **3.2 Badge (`src/components/ui/Badge.tsx`)**
+  - [x] Variants: `new` (sage-teal), `limited` (aged-brass), `in-stock` (green), `on-order` (outline)
+  - [x] 10px ALL CAPS, letter-spacing 0.2em, pill shape
 
-- [ ] **3.3 Chip (`src/components/ui/Chip.tsx`)**
-  - [ ] Used for: filter options, size selectors, leather type tags
-  - [ ] States: default (outline), selected (leather-brown bg, white text), disabled
-  - [ ] Pill shape, Manrope 500 weight, 14px
+- [x] **3.3 Chip (`src/components/ui/Chip.tsx`)**
+  - [x] States: default (outline), selected (leather-brown bg, white text), disabled
+  - [x] Pill shape, Manrope 500, 14px, `aria-pressed` for accessibility
+  - [x] `readOnly` prop for display-only use
 
 ---
 
