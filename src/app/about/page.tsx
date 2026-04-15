@@ -126,7 +126,7 @@ export default function AboutPage() {
 
             {/* Image */}
             <AnimatedSection className="relative">
-              <div className="aspect-[4/5] bg-surface-high overflow-hidden max-w-[520px] mx-auto lg:mx-0">
+              <div className="aspect-4/5 bg-surface-high overflow-hidden max-w-130 mx-auto lg:mx-0">
                 <div
                   className="w-full h-full bg-cover bg-center"
                   style={{ backgroundImage: "url('/images/placeholder/about-workshop.jpg')" }}
@@ -188,7 +188,7 @@ export default function AboutPage() {
             {CRAFT_STEPS.map((step, i) => (
               <AnimatedSection key={step.number} delay={i * 150}>
                 {/* Step image */}
-                <div className="aspect-[4/3] bg-warm-cream/10 overflow-hidden mb-5">
+                <div className="aspect-4/3 bg-warm-cream/10 overflow-hidden mb-5">
                   <div
                     className="w-full h-full bg-cover bg-center opacity-70"
                     style={{ backgroundImage: `url('${step.image}')` }}
@@ -284,7 +284,7 @@ export default function AboutPage() {
             {VALUES.map((v, i) => (
               <AnimatedSection key={v.heading} delay={i * 100}>
                 {/* Decorative rule */}
-                <div className="w-10 h-[2px] bg-sage-teal mb-6" />
+                <div className="w-10 h-0.5 bg-sage-teal mb-6" />
                 <h3 className="font-serif font-bold text-leather-brown text-headline-sm mb-3">
                   {v.heading}
                 </h3>
@@ -302,7 +302,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════ */}
       <section aria-label="Call to action" className="py-16 lg:py-24 bg-surface-low">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
-          <AnimatedSection className="flex flex-col items-center text-center max-w-[560px] mx-auto">
+          <AnimatedSection className="flex flex-col items-center text-center max-w-140 mx-auto">
 
             <p className="label-sm-caps text-sage-teal mb-4">Ready?</p>
 

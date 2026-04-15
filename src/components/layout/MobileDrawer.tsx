@@ -69,7 +69,7 @@ function AccordionItem({
             <Link
               href={href}
               onClick={onLinkClick}
-              className="block px-8 py-2.5 text-body-sm font-sans text-on-surface-variant hover:text-leather-brown transition-colors duration-150 min-h-11 flex items-center"
+              className="flex items-center px-8 py-2.5 text-body-sm font-sans text-on-surface-variant hover:text-leather-brown transition-colors duration-150 min-h-11"
             >
               All {label}
             </Link>
@@ -79,7 +79,7 @@ function AccordionItem({
               <Link
                 href={item.href}
                 onClick={onLinkClick}
-                className="block px-8 py-2.5 text-body-sm font-sans text-on-surface-variant hover:text-leather-brown transition-colors duration-150 min-h-11 flex items-center"
+                className="flex items-center px-8 py-2.5 text-body-sm font-sans text-on-surface-variant hover:text-leather-brown transition-colors duration-150 min-h-11"
               >
                 {item.label}
               </Link>
@@ -105,10 +105,10 @@ function NavLink({
       href={href}
       onClick={onClick}
       className="
-        block px-6 py-4 border-b border-outline/40
+        flex items-center px-6 py-4 border-b border-outline/40
         text-body-md font-sans font-medium text-leather-brown
         hover:text-russet transition-colors duration-150
-        min-h-11 flex items-center
+        min-h-11
       "
     >
       {children}
@@ -169,7 +169,7 @@ export default function MobileDrawer() {
         aria-hidden="true"
         onClick={close}
         className={`
-          lg:hidden fixed inset-0 z-[49] bg-leather-brown/50
+          lg:hidden fixed inset-0 z-49 bg-leather-brown/50
           transition-opacity duration-300
           ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
         `}

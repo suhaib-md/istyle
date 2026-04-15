@@ -62,7 +62,7 @@ export default function WhatsAppFAB({ href }: WhatsAppFABProps) {
       >
         Chat with us to order
         {/* Arrow pointing right */}
-        <span className="absolute top-1/2 -translate-y-1/2 -right-[5px] border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-leather-brown" />
+        <span className="absolute top-1/2 -translate-y-1/2 -right-1.25 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-leather-brown" />
       </span>
     </a>
   );
