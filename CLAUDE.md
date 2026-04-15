@@ -810,22 +810,22 @@ Legend:
 
 ---
 
-### Phase 7 — Contact Page & Custom 404
+### Phase 7 — Contact Page & Custom 404 ✓ COMPLETE
 > Goal: Functional contact page and on-brand 404.
 
-- [ ] **7.1 Contact page (`src/app/contact/page.tsx`)**
-  - [ ] Heading: "Get in Touch"
-  - [ ] Three contact cards: WhatsApp (large green button → wa.me link), Instagram (@istyleLeathers → instagram.com), Email (istyleleathersmvs@gmail.com → mailto:)
-  - [ ] Contact form: Name (`type="text"`), Phone (`type="tel"`), Message (`<textarea>`) — honeypot field — submit shows inline success
-  - [ ] "Based in Melvisharam, Ranipet District, Tamil Nadu, India"
-  - [ ] Google Maps embed (general area — Melvisharam)
+- [x] **7.1 Contact page (`src/app/contact/page.tsx`)**
+  - [x] Heading: "Get in Touch"
+  - [x] Three contact cards: WhatsApp (large green button → wa.me link), Instagram (@istyleLeathers → instagram.com), Email (istyleleathersmvs@gmail.com → mailto:)
+  - [x] Contact form: Name (`type="text"`), Phone (`type="tel"`), Message (`<textarea>`) — honeypot field — submit shows inline success
+  - [x] "Based in Melvisharam, Ranipet District, Tamil Nadu, India"
+  - [x] Google Maps embed (general area — Melvisharam)
 
-- [ ] **7.2 Custom 404 (`src/app/not-found.tsx`)**
-  - [ ] Logo
-  - [ ] On-brand message: "That page seems to have walked off."
-  - [ ] "Go Home" primary CTA + "Browse All Products" secondary CTA
-  - [ ] 4 featured product cards (from `products.ts` where `featured: true`)
-  - [ ] Same nav/footer as rest of the site (root layout handles this)
+- [x] **7.2 Custom 404 (`src/app/not-found.tsx`)**
+  - [x] Logo
+  - [x] On-brand message: "That page seems to have walked off."
+  - [x] "Go Home" primary CTA + "Browse All Products" secondary CTA
+  - [x] 4 featured product cards (from `products.ts` where `featured: true`)
+  - [x] Same nav/footer as rest of the site (root layout handles this)
 
 ---
 

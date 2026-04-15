@@ -78,8 +78,8 @@ src/
 | 4 | Collection/catalog pages with filters | ✅ Complete |
 | 5 | Product Detail Pages | ✅ Complete |
 | 6 | About page | ✅ Complete |
-| 7 | Contact page + Custom 404 | 🔲 Next |
-| 8 | Search overlay (Fuse.js) | 🔲 Pending |
+| 7 | Contact page + Custom 404 | ✅ Complete |
+| 8 | Search overlay (Fuse.js) | 🔲 Next |
 | 9 | SEO, PWA, Performance | 🔲 Pending |
 | 10 | QA + Cross-browser | 🔲 Pending |
 
