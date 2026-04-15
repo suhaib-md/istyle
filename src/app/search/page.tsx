@@ -5,6 +5,7 @@ import SearchResults from "./SearchResults";
 export const metadata: Metadata = {
   title: "Search",
   description: "Search the I Style Leathers collection.",
+  robots: { index: false, follow: false },
 };
 
 export default function SearchPage() {

@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Our Story",
   description:
     "Learn about the craft and passion behind I Style Leathers, handcrafted in Melvisharam, Tamil Nadu.",
+  alternates: { canonical: "https://istyle.vercel.app/about" },
+  openGraph: {
+    url: "https://istyle.vercel.app/about",
+    title: "Our Story — I Style Leathers",
+    description:
+      "Learn about the craft and passion behind I Style Leathers, handcrafted in Melvisharam, Tamil Nadu.",
+  },
 };
 
 /* ── Craft process steps ─────────────────────────────────── */

@@ -21,9 +21,16 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = categories.find((c) => c.slug === category);
   if (!cat) return {};
+  const canonical = `https://istyle.vercel.app/collections/${cat.slug}`;
   return {
     title: `${cat.label} Collection`,
     description: `Browse our handcrafted leather ${cat.label.toLowerCase()}. Made in Tamil Nadu. Order on WhatsApp.`,
+    alternates: { canonical },
+    openGraph: {
+      url: canonical,
+      title: `${cat.label} Collection — I Style Leathers`,
+      description: `Browse our handcrafted leather ${cat.label.toLowerCase()}. Made in Tamil Nadu. Order on WhatsApp.`,
+    },
   };
 }
 

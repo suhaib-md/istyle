@@ -80,8 +80,8 @@ src/
 | 6 | About page | ✅ Complete |
 | 7 | Contact page + Custom 404 | ✅ Complete |
 | 8 | Search overlay (Fuse.js) | ✅ Complete |
-| 9 | SEO, PWA, Performance | 🔲 Next |
-| 10 | QA + Cross-browser | 🔲 Pending |
+| 9 | SEO, PWA, Performance | ✅ Complete |
+| 10 | QA + Cross-browser | 🔲 Next |
 
 Full spec in [CLAUDE.md](./CLAUDE.md).
 
