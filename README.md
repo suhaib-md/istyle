@@ -75,8 +75,8 @@ src/
 | 1 | Root layout, Navbar, Footer, Mobile Drawer, BottomTabBar, WhatsApp FAB | ✅ Complete |
 | 2 | Homepage — all 8 sections + AnimatedSection utility | ✅ Complete |
 | 3 | Shared UI: Button, Badge, Chip components | ✅ Complete |
-| 4 | Collection/catalog pages with filters | 🔲 Next |
-| 5 | Product Detail Pages | 🔲 Pending |
+| 4 | Collection/catalog pages with filters | ✅ Complete |
+| 5 | Product Detail Pages | 🔲 Next |
 | 6 | About page | 🔲 Pending |
 | 7 | Contact page + Custom 404 | 🔲 Pending |
 | 8 | Search overlay (Fuse.js) | 🔲 Pending |
