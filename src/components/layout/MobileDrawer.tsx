@@ -254,7 +254,7 @@ export default function MobileDrawer() {
           </a>
 
           <a
-            href="https://www.instagram.com/istyleLeathers/"
+            href="https://www.instagram.com/istyle_leathers/"
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -265,7 +265,7 @@ export default function MobileDrawer() {
             "
           >
             <InstagramIcon size={18} aria-hidden />
-            @istyleLeathers
+            @istyle_leathers
           </a>
         </div>
       </div>

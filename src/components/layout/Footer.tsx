@@ -35,7 +35,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 pt-1">
               <a
-                href="https://www.instagram.com/istyleLeathers/"
+                href="https://www.instagram.com/istyle_leathers/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="I Style Leathers on Instagram"
@@ -126,7 +126,7 @@ export default function Footer() {
                 {WA_PHONE_DISPLAY}
               </WhatsAppLink>
               <a
-                href="https://www.instagram.com/istyleLeathers/"
+                href="https://www.instagram.com/istyle_leathers/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
@@ -136,7 +136,7 @@ export default function Footer() {
                 "
               >
                 <InstagramIcon size={14} aria-hidden />
-                @istyleLeathers
+                @istyle_leathers
               </a>
             </div>
           </div>

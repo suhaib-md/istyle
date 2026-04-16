@@ -90,7 +90,7 @@ const orgJsonLd = {
     contactType: "customer service",
     availableLanguage: ["English", "Tamil"],
   },
-  sameAs: ["https://www.instagram.com/istyleLeathers/"],
+  sameAs: ["https://www.instagram.com/istyle_leathers/"],
 };
 
 export default function RootLayout({

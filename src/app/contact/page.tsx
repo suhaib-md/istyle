@@ -8,13 +8,13 @@ import WhatsAppLink from "@/components/ui/WhatsAppLink";
 export const metadata: Metadata = {
   title: "Contact I Style Leathers — WhatsApp & Instagram",
   description:
-    "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyleLeathers.",
+    "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyle_leathers.",
   alternates: { canonical: "https://istyleleathers.vercel.app/contact" },
   openGraph: {
     url: "https://istyleleathers.vercel.app/contact",
     title: "Contact I Style Leathers — WhatsApp & Instagram",
     description:
-      "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyleLeathers.",
+      "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyle_leathers.",
   },
 };
 
@@ -95,11 +95,11 @@ export default function ContactPage() {
                     the bench. DMs are welcome too.
                   </p>
                   <p className="font-sans font-semibold text-body-sm text-leather-brown">
-                    @istyleLeathers
+                    @istyle_leathers
                   </p>
                 </div>
                 <a
-                  href="https://www.instagram.com/istyleLeathers/"
+                  href="https://www.instagram.com/istyle_leathers/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

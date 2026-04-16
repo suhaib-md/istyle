@@ -11,11 +11,11 @@ export default function InstagramStrip() {
           <div>
             <p className="label-sm-caps text-sage-teal mb-2">Follow Along</p>
             <h2 className="font-serif font-bold text-leather-brown text-headline-md">
-              @istyleLeathers
+              @istyle_leathers
             </h2>
           </div>
           <a
-            href="https://www.instagram.com/istyleLeathers/"
+            href="https://www.instagram.com/istyle_leathers/"
             target="_blank"
             rel="noopener noreferrer"
             className="
