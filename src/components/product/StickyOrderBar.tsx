@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { WhatsAppIcon } from "@/components/ui/Icons";
 import { buildWhatsAppURL } from "@/lib/whatsapp";
 import { formatPrice } from "@/data/products";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 interface StickyOrderBarProps {
   productName: string;
@@ -79,6 +80,7 @@ export default function StickyOrderBar({ productName, price, pageUrl }: StickyOr
             hover:opacity-90 transition-opacity duration-150
           "
           aria-label={`Order ${productName} on WhatsApp`}
+          onClick={() => trackWhatsAppClick(productName)}
         >
           <WhatsAppIcon size={18} aria-hidden />
           Order

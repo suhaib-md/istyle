@@ -3,6 +3,7 @@ import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { WhatsAppIcon, ArrowRightIcon } from "@/components/ui/Icons";
 import { WA_GENERIC_URL } from "@/lib/whatsapp";
+import WhatsAppLink from "@/components/ui/WhatsAppLink";
 
 export const metadata: Metadata = {
   title: "Our Story",
@@ -230,7 +231,7 @@ export default function AboutPage() {
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
 
           <AnimatedSection className="mb-10 lg:mb-12">
-            <p className="label-sm-caps text-sage-teal mb-3">What We Make</p>
+            <p className="label-sm-caps text-sage-teal mb-4">What We Make</p>
             <h2 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg">
               Browse the Collection
             </h2>
@@ -281,7 +282,7 @@ export default function AboutPage() {
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
 
           <AnimatedSection className="mb-10 lg:mb-14 max-w-[42ch]">
-            <p className="label-sm-caps text-sage-teal mb-3">What We Stand For</p>
+            <p className="label-sm-caps text-sage-teal mb-4">What We Stand For</p>
             <h2 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight">
               Three Things We Don't Compromise On
             </h2>
@@ -337,10 +338,8 @@ export default function AboutPage() {
                 <ArrowRightIcon size={16} aria-hidden />
               </Link>
 
-              <a
+              <WhatsAppLink
                 href={WA_GENERIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="
                   inline-flex items-center gap-2.5
                   border border-leather-brown text-leather-brown
@@ -352,7 +351,7 @@ export default function AboutPage() {
               >
                 <WhatsAppIcon size={18} aria-hidden />
                 Order on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
 
           </AnimatedSection>

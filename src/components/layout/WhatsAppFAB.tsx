@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { WA_GENERIC_URL } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/ui/Icons";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 interface WhatsAppFABProps {
   /** Override the default WA URL — e.g. on product pages pass the product-specific URL */
@@ -19,6 +20,7 @@ export default function WhatsAppFAB({ href }: WhatsAppFABProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      onClick={() => trackWhatsAppClick()}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
       onFocus={() => setShowTooltip(true)}

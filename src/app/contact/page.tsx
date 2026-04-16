@@ -3,6 +3,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import ContactForm from "./ContactForm";
 import { WhatsAppIcon, InstagramIcon } from "@/components/ui/Icons";
 import { WA_GENERIC_URL, WA_PHONE_DISPLAY } from "@/lib/whatsapp";
+import WhatsAppLink from "@/components/ui/WhatsAppLink";
 
 export const metadata: Metadata = {
   title: "Contact I Style Leathers — WhatsApp & Instagram",
@@ -63,10 +64,8 @@ export default function ContactPage() {
                     {WA_PHONE_DISPLAY}
                   </p>
                 </div>
-                <a
+                <WhatsAppLink
                   href={WA_GENERIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="
                     inline-flex items-center justify-center gap-2
                     bg-[#25D366] text-white
@@ -77,7 +76,7 @@ export default function ContactPage() {
                 >
                   <WhatsAppIcon size={18} aria-hidden />
                   Chat Now
-                </a>
+                </WhatsAppLink>
               </div>
             </AnimatedSection>
 

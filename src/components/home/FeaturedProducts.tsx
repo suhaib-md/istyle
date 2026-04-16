@@ -28,7 +28,7 @@ function ProductCardSimple({
       aria-label={`View ${name}`}
     >
       {/* Image container — 4:5 aspect */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-surface-mid mb-4">
+      <div className="relative aspect-4/5 w-full overflow-hidden bg-surface-mid mb-4">
         {/* Badges */}
         {(isNew || isLimited) && (
           <span
@@ -70,14 +70,14 @@ function ProductCardSimple({
       </div>
 
       {/* Product info */}
-      <div>
-        <p className="text-[10px] font-sans font-semibold tracking-[0.18em] uppercase text-on-surface-variant mb-1">
+      <div className="pt-1">
+        <p className="text-[10px] font-sans font-semibold tracking-[0.18em] uppercase text-on-surface-variant mb-2">
           {leatherType}
         </p>
-        <h3 className="font-serif text-headline-sm text-leather-brown leading-tight mb-1.5">
+        <h3 className="font-serif text-headline-sm text-leather-brown leading-tight mb-2.5">
           {name}
         </h3>
-        <p className="font-sans text-body-sm text-on-surface-variant line-clamp-2 mb-2">
+        <p className="font-sans text-body-sm text-on-surface-variant line-clamp-2 mb-3 leading-relaxed">
           {shortDescription}
         </p>
         <p className="font-sans font-semibold text-body-md text-leather-brown">
@@ -96,7 +96,7 @@ export default function FeaturedProducts() {
       aria-label="New arrivals"
       className="py-16 lg:py-24 bg-warm-cream"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-8xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <AnimatedSection className="flex items-end justify-between mb-8 lg:mb-12">
           <div>

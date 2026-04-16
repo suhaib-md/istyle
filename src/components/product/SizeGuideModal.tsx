@@ -39,7 +39,7 @@ export default function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps)
       <div
         aria-hidden
         onClick={onClose}
-        className="fixed inset-0 z-[60] bg-leather-brown/50 transition-opacity"
+        className="fixed inset-0 z-60 bg-leather-brown/50 transition-opacity"
       />
 
       {/* Modal */}
@@ -48,7 +48,7 @@ export default function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps)
         aria-modal="true"
         aria-labelledby="size-guide-title"
         className="
-          fixed z-[61] inset-x-4 top-1/2 -translate-y-1/2
+          fixed z-61 inset-x-4 top-1/2 -translate-y-1/2
           sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:w-full sm:max-w-sm
           bg-warm-cream shadow-2xl
         "

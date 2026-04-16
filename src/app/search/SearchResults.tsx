@@ -6,6 +6,7 @@ import { searchProducts } from "@/lib/search";
 import ProductCard from "@/components/catalog/ProductCard";
 import { WhatsAppIcon } from "@/components/ui/Icons";
 import { WA_GENERIC_URL } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function SearchResults() {
   const searchParams = useSearchParams();
@@ -62,6 +63,7 @@ export default function SearchResults() {
             href={WA_GENERIC_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick()}
             className="
               inline-flex items-center gap-2
               bg-[#25D366] text-white

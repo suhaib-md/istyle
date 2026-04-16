@@ -6,6 +6,7 @@ import Chip from "@/components/ui/Chip";
 import SizeGuideModal from "./SizeGuideModal";
 import { buildWhatsAppURL } from "@/lib/whatsapp";
 import { formatPrice } from "@/data/products";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import type { Product } from "@/types/product";
 
 interface ProductInfoProps {
@@ -31,10 +32,10 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-5" id="product-info-panel">
+      <div className="flex flex-col gap-6" id="product-info-panel">
         {/* Name + price */}
         <div>
-          <h1 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight mb-3">
+          <h1 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight mb-4">
             {name}
           </h1>
           <p className="font-sans font-bold text-[1.75rem] text-leather-brown leading-none">
@@ -72,7 +73,7 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
                   aria-label={`Select colour ${c.name}`}
                   aria-pressed={selectedColor === c.name}
                   className={`
-                    w-8 h-8 rounded-full border-[2px] transition-all duration-150
+                    w-8 h-8 rounded-full border-2 transition-all duration-150
                     ${selectedColor === c.name ? "border-leather-brown scale-110" : "border-transparent hover:border-outline"}
                   `}
                   style={{ backgroundColor: c.hex }}
@@ -123,6 +124,7 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
             mt-1
           "
           aria-label="Order on WhatsApp"
+          onClick={() => trackWhatsAppClick(name)}
         >
           <WhatsAppIcon size={20} aria-hidden />
           Order on WhatsApp

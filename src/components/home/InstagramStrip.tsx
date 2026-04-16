@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 export default function InstagramStrip() {
   return (
     <section aria-label="Instagram feed" className="py-16 lg:py-24 bg-warm-cream">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-8xl mx-auto">
         {/* Header */}
         <AnimatedSection className="px-6 lg:px-12 mb-8 lg:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>

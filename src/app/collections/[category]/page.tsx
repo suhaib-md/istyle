@@ -79,15 +79,15 @@ export default async function CollectionCategoryPage({
       </div>
 
       {/* ── Main content ───────────────────────────────────── */}
-      <div className="max-w-8xl mx-auto px-6 lg:px-12 py-6 lg:py-10">
+      <div className="max-w-8xl mx-auto px-6 lg:px-12 py-10 lg:py-14">
 
         {/* Category description */}
-        <p className="font-sans text-body-lg text-on-surface-variant max-w-[65ch] mb-6">
+        <p className="font-sans text-body-lg text-on-surface-variant max-w-[65ch] mb-10">
           {cat.description}
         </p>
 
         {/* Filter bar — needs Suspense because it reads useSearchParams */}
-        <Suspense fallback={<div className="h-12 border-b border-outline mb-6" />}>
+        <Suspense fallback={<div className="h-12 border-b border-outline mb-8" />}>
           <FilterBar
             subcategories={cat.subcategories}
             totalProducts={allProducts.length}
@@ -95,7 +95,7 @@ export default async function CollectionCategoryPage({
         </Suspense>
 
         {/* Product grid */}
-        <div className="mt-8 lg:mt-10">
+        <div className="mt-10 lg:mt-12">
           <ProductGrid
             products={filtered}
             totalUnfiltered={allProducts.length}

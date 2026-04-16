@@ -89,7 +89,7 @@ export default async function ProductDetailPage({
 
       <div className="max-w-8xl mx-auto px-6 lg:px-12">
         {/* ── Breadcrumb ─────────────────────────────────── */}
-        <nav aria-label="Breadcrumb" className="py-4">
+        <nav aria-label="Breadcrumb" className="py-5 lg:py-6">
           {/* Desktop: full path */}
           <ol className="hidden lg:flex items-center gap-1.5 font-sans text-body-sm text-on-surface-variant flex-wrap">
             <li><Link href="/" className="hover:text-leather-brown transition-colors">Home</Link></li>
@@ -125,7 +125,7 @@ export default async function ProductDetailPage({
           </div>
 
           {/* Right — product info */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-10">
             <ProductInfo product={product} pageUrl={pageUrl} />
             <ProductAccordion product={product} />
           </div>

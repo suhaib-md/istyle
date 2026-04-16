@@ -80,7 +80,7 @@ export default function SearchOverlay() {
     <>
       {/* ── Backdrop ────────────────────────────────────────── */}
       <div
-        className="fixed inset-0 z-[60] bg-leather-brown/40"
+        className="fixed inset-0 z-60 bg-leather-brown/40"
         onClick={close}
         aria-hidden
       />
@@ -90,7 +90,7 @@ export default function SearchOverlay() {
         role="dialog"
         aria-label="Search products"
         aria-modal="true"
-        className="fixed top-0 left-0 right-0 z-[60] bg-warm-cream shadow-xl"
+        className="fixed top-0 left-0 right-0 z-60 bg-warm-cream shadow-xl"
       >
         {/* Input row */}
         <div className="max-w-8xl mx-auto px-6 lg:px-12 flex items-center gap-4 h-16 lg:h-20 border-b border-outline">

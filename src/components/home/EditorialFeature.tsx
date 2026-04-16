@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRightIcon, WhatsAppIcon } from "@/components/ui/Icons";
-import { buildWhatsAppURL, WA_GENERIC_URL } from "@/lib/whatsapp";
+import { buildWhatsAppURL } from "@/lib/whatsapp";
 import { formatPrice } from "@/data/products";
+import WhatsAppLink from "@/components/ui/WhatsAppLink";
 
 // The "hero product" for the editorial block — swap slug/price when ready
 const EDITORIAL_PRODUCT = {
@@ -44,9 +45,9 @@ export default function EditorialFeature() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-[600px]">
-          <p className="label-sm-caps text-white/60 mb-5">
+      <div className="relative z-10 w-full max-w-8xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <div className="max-w-150">
+          <p className="label-sm-caps text-white/60 mb-6">
             Featured Piece
           </p>
 
@@ -54,24 +55,23 @@ export default function EditorialFeature() {
             className="
               font-serif font-bold text-white
               text-headline-md lg:text-headline-lg xl:text-[3.25rem]
-              leading-tight mb-3 whitespace-pre-line
+              leading-tight mb-8 whitespace-pre-line
             "
           >
             {EDITORIAL_PRODUCT.quote}
           </h2>
 
-          <p className="font-sans text-body-lg text-white/70 mb-2">
+          <p className="font-sans text-body-lg text-white/70 mb-1.5">
             {EDITORIAL_PRODUCT.name} &mdash; {EDITORIAL_PRODUCT.descriptor}
           </p>
-          <p className="font-sans font-bold text-white text-headline-sm mb-8">
+          <p className="font-sans font-bold text-white text-headline-sm mb-10">
             {formatPrice(EDITORIAL_PRODUCT.price)}
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <a
+            <WhatsAppLink
               href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              productName={`${EDITORIAL_PRODUCT.name} — ${EDITORIAL_PRODUCT.descriptor}`}
               className="
                 inline-flex items-center gap-2.5
                 bg-whatsapp text-white
@@ -82,7 +82,7 @@ export default function EditorialFeature() {
             >
               <WhatsAppIcon size={18} aria-hidden />
               Order on WhatsApp
-            </a>
+            </WhatsAppLink>
 
             <Link
               href={`/products/${EDITORIAL_PRODUCT.slug}`}

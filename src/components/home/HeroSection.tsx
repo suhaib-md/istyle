@@ -60,7 +60,7 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Hero"
-      className="relative w-full h-[100svh] overflow-hidden"
+      className="relative w-full h-svh overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -94,7 +94,7 @@ export default function HeroSection() {
       ))}
 
       {/* Content — sits above all slides */}
-      <div className="relative z-20 h-full flex flex-col justify-end px-6 lg:px-16 pb-20 lg:pb-28 max-w-[1440px] mx-auto">
+      <div className="relative z-20 h-full flex flex-col justify-end px-6 lg:px-16 pb-20 lg:pb-28 max-w-8xl mx-auto">
         {/* Badge */}
         <div className="flex mb-5 lg:mb-6">
           <span className="inline-flex items-center gap-2 bg-white/10 border border-white/25 backdrop-blur-sm text-white text-[11px] font-sans font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-sm">
@@ -108,7 +108,7 @@ export default function HeroSection() {
           className="
             font-serif font-bold text-white
             text-[2.5rem] leading-[1.05] sm:text-[3.5rem] lg:text-[5rem] xl:text-[5.5rem]
-            max-w-[14ch] mb-4 lg:mb-6
+            max-w-[14ch] mb-6 lg:mb-8
             whitespace-pre-line
           "
         >
@@ -116,7 +116,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Sub-headline */}
-        <p className="font-sans font-light text-white/80 text-body-md lg:text-body-lg max-w-[44ch] mb-8 lg:mb-10">
+        <p className="font-sans font-light text-white/80 text-body-md lg:text-body-lg max-w-[52ch] mb-10 lg:mb-12">
           {activeSlide.sub}
         </p>
 
@@ -162,7 +162,7 @@ export default function HeroSection() {
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => setCurrent(i)}
                 className={`
-                  h-[2px] transition-all duration-300
+                  h-0.5 transition-all duration-300
                   ${i === current ? "w-8 bg-white" : "w-4 bg-white/40 hover:bg-white/70"}
                 `}
               />
@@ -177,7 +177,7 @@ export default function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden lg:flex flex-col items-center gap-2 text-white/50"
       >
         <span className="text-[10px] font-sans tracking-[0.2em] uppercase">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
+        <div className="w-px h-10 bg-linear-to-b from-white/50 to-transparent" />
       </div>
     </section>
   );

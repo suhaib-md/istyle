@@ -38,7 +38,7 @@ function Dropdown({ items }: { items: { label: string; href: string }[] }) {
     >
       <ul
         className="
-          min-w-45 bg-warm-cream border border-outline
+          min-w-45 bg-parchment border border-outline
           shadow-lg py-1
         "
       >
@@ -135,9 +135,9 @@ export default function Navbar() {
     <header
       className={`
         fixed top-0 left-0 right-0 z-40
-        bg-warm-cream border-b border-outline
+        bg-parchment border-b border-outline
         transition-all duration-300
-        ${scrolled ? "py-2 shadow-sm" : "py-4"}
+        ${scrolled ? "py-2 shadow-md" : "py-4"}
       `}
     >
       <div className="max-w-8xl mx-auto px-6 lg:px-12">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { WhatsAppIcon } from "@/components/ui/Icons";
 import { WA_GENERIC_URL } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 type FormState = "idle" | "loading" | "success";
 
@@ -25,7 +26,7 @@ export default function ContactForm() {
   if (state === "success") {
     return (
       <div className="py-8 flex flex-col items-start gap-4">
-        <div className="w-10 h-[2px] bg-sage-teal" />
+        <div className="w-10 h-0.5 bg-sage-teal" />
         <p className="font-serif font-bold text-leather-brown text-headline-sm">
           Message received.
         </p>
@@ -37,6 +38,7 @@ export default function ContactForm() {
           href={WA_GENERIC_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick()}
           className="
             inline-flex items-center gap-2
             bg-[#25D366] text-white

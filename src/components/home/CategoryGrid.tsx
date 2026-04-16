@@ -26,7 +26,7 @@ const CATEGORIES = [
 export default function CategoryGrid() {
   return (
     <section aria-label="Shop by category" className="w-full">
-      <div className="max-w-[1440px] mx-auto px-0 lg:px-0">
+      <div className="max-w-8xl mx-auto px-0 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-3 items-stretch">
           {CATEGORIES.map((cat) => (
             <Link
@@ -34,7 +34,7 @@ export default function CategoryGrid() {
               href={cat.href}
               className={`
                 group relative overflow-hidden block
-                ${cat.tall ? "h-[60vw] lg:h-[600px]" : "h-[60vw] lg:h-[520px]"}
+                ${cat.tall ? "h-[60vw] lg:h-150" : "h-[60vw] lg:h-130"}
                 ${cat.bg}
               `}
               aria-label={`Shop ${cat.label}`}

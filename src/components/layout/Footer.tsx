@@ -3,6 +3,7 @@ import { WhatsAppIcon, InstagramIcon } from "@/components/ui/Icons";
 import { WA_GENERIC_URL, WA_PHONE_DISPLAY } from "@/lib/whatsapp";
 import NewsletterForm from "./NewsletterForm";
 import SiteLogo from "./SiteLogo";
+import WhatsAppLink from "@/components/ui/WhatsAppLink";
 
 const SHOP_LINKS = [
   { label: "Footwear", href: "/collections/footwear" },
@@ -22,12 +23,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-parchment border-t border-outline" aria-label="Site footer">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-8xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-14 lg:py-16">
           <div className="space-y-4">
             <SiteLogo />
 
-            <p className="text-body-sm font-sans text-on-surface-variant leading-relaxed max-w-[220px]">
+            <p className="text-body-sm font-sans text-on-surface-variant leading-relaxed max-w-55">
               Handcrafted leather goods from Melvisharam, Tamil Nadu. Timeless
               style, made by hand.
             </p>
@@ -46,10 +47,8 @@ export default function Footer() {
               >
                 <InstagramIcon size={18} />
               </a>
-              <a
+              <WhatsAppLink
                 href={WA_GENERIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
                 className="
                   w-9 h-9 flex items-center justify-center rounded-sm
@@ -58,7 +57,7 @@ export default function Footer() {
                 "
               >
                 <WhatsAppIcon size={18} />
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
 
@@ -115,10 +114,8 @@ export default function Footer() {
 
             <div className="space-y-2 pt-1">
               <h3 className="label-sm-caps text-leather-brown">Contact</h3>
-              <a
+              <WhatsAppLink
                 href={WA_GENERIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="
                   flex items-center gap-2
                   text-body-sm font-sans text-on-surface-variant
@@ -127,7 +124,7 @@ export default function Footer() {
               >
                 <WhatsAppIcon size={14} aria-hidden />
                 {WA_PHONE_DISPLAY}
-              </a>
+              </WhatsAppLink>
               <a
                 href="https://www.instagram.com/istyleLeathers/"
                 target="_blank"

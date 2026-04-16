@@ -5,13 +5,13 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 export default function BrandStoryStrip() {
   return (
     <section aria-label="Our story" className="py-16 lg:py-24 bg-parchment overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-8xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Left — image with floating stat card */}
           <AnimatedSection className="relative">
             {/* 4:5 image container */}
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-surface-high max-w-[520px] mx-auto lg:mx-0">
+            <div className="relative aspect-4/5 w-full overflow-hidden bg-surface-high max-w-130 mx-auto lg:mx-0">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
@@ -26,7 +26,7 @@ export default function BrandStoryStrip() {
               className="
                 absolute -bottom-4 -right-4 lg:-right-8
                 bg-leather-brown text-warm-cream
-                px-6 py-5 min-w-[160px]
+                px-6 py-5 min-w-40
                 shadow-xl
               "
             >
@@ -40,7 +40,7 @@ export default function BrandStoryStrip() {
           </AnimatedSection>
 
           {/* Right — text content */}
-          <AnimatedSection delay={150} className="max-w-[540px]">
+          <AnimatedSection delay={150} className="max-w-135">
             <p className="label-sm-caps text-sage-teal mb-4">
               Handcrafted with Passion
             </p>

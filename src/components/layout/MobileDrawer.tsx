@@ -12,6 +12,7 @@ import {
   InstagramIcon,
 } from "@/components/ui/Icons";
 import { WA_GENERIC_URL } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const FOOTWEAR_SUBCATS = [
   { label: "Slides", href: "/collections/footwear?subcategory=slides" },
@@ -239,6 +240,7 @@ export default function MobileDrawer() {
             href={WA_GENERIC_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick()}
             className="
               flex items-center justify-center gap-2.5
               w-full h-12 rounded-sm

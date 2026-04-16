@@ -1,6 +1,7 @@
 import { WhatsAppIcon } from "@/components/ui/Icons";
 import { WA_GENERIC_URL, WA_PHONE_DISPLAY } from "@/lib/whatsapp";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import WhatsAppLink from "@/components/ui/WhatsAppLink";
 
 export default function WhatsAppBanner() {
   return (
@@ -8,31 +9,29 @@ export default function WhatsAppBanner() {
       aria-label="Order on WhatsApp"
       className="bg-sage-teal py-16 lg:py-20"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <AnimatedSection className="flex flex-col items-center text-center max-w-[600px] mx-auto">
+      <div className="max-w-8xl mx-auto px-6 lg:px-12">
+        <AnimatedSection className="flex flex-col items-center text-center max-w-150 mx-auto">
 
           {/* Icon */}
           <div className="w-16 h-16 rounded-full bg-white/15 flex items-center justify-center mb-6">
             <WhatsAppIcon size={32} className="text-white" aria-hidden />
           </div>
 
-          <h2 className="font-serif font-bold text-white text-headline-md lg:text-headline-lg leading-tight mb-4">
+          <h2 className="font-serif font-bold text-white text-headline-md lg:text-headline-lg leading-tight mb-6">
             Order Directly on WhatsApp
           </h2>
 
-          <p className="font-sans text-body-lg text-white/80 leading-relaxed mb-3 max-w-[44ch]">
+          <p className="font-sans text-body-lg text-white/80 leading-relaxed mb-4 max-w-[44ch]">
             Browse what you love, then send us a message. We confirm availability, take your size, and ship directly to your door — pan-India.
           </p>
 
-          <p className="font-sans text-body-sm text-white/60 mb-8">
+          <p className="font-sans text-body-sm text-white/60 mb-10">
             No sign-ups. No payment gateway. Just a conversation.
           </p>
 
           {/* CTA */}
-          <a
+          <WhatsAppLink
             href={WA_GENERIC_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="
               inline-flex items-center gap-3
               bg-white text-sage-teal
@@ -45,7 +44,7 @@ export default function WhatsAppBanner() {
           >
             <WhatsAppIcon size={22} aria-hidden />
             Chat with Us — {WA_PHONE_DISPLAY}
-          </a>
+          </WhatsAppLink>
 
           <p className="font-sans text-body-sm text-white/50 mt-5">
             Typically responds within a few hours
