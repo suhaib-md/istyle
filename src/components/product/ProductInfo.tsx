@@ -11,21 +11,19 @@ import type { Product } from "@/types/product";
 
 interface ProductInfoProps {
   product: Product;
-  /** Full canonical URL of this page — injected server-side */
   pageUrl: string;
 }
 
 const TRUST_SIGNALS = [
-  { icon: "✦", label: "Handcrafted Quality" },
-  { icon: "✦", label: "Easy WhatsApp Ordering" },
-  { icon: "✦", label: "Pan-India Delivery" },
+  { icon: "*", label: "Handcrafted Quality" },
+  { icon: "*", label: "Easy WhatsApp Ordering" },
+  { icon: "*", label: "Pan-India Delivery" },
 ];
 
 export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
   const { name, price, shortDescription, leatherType, colors, sizes, status } = product;
 
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
-  const [selectedColor, setSelectedColor] = useState(colors[0]?.name ?? "");
   const [showSizeGuide, setShowSizeGuide] = useState(false);
 
   const waUrl = buildWhatsAppURL(name, pageUrl);
@@ -33,7 +31,6 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
   return (
     <>
       <div className="flex flex-col gap-6" id="product-info-panel">
-        {/* Name + price */}
         <div>
           <h1 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight mb-4">
             {name}
@@ -43,47 +40,45 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
           </p>
           {status === "available-on-order" && (
             <p className="font-sans text-body-sm text-on-surface-variant mt-1">
-              Available on order — ships within 7–10 days
+              Available on order - ships within 7-10 days
             </p>
           )}
         </div>
 
-        {/* Short description */}
         <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed">
           {shortDescription}
         </p>
 
-        {/* Leather type chip */}
         <div className="flex items-center gap-2 flex-wrap">
           <span className="label-sm-caps text-on-surface-variant">Leather:</span>
           <Chip label={leatherType} readOnly />
         </div>
 
-        {/* Color swatches — only if multiple colors */}
         {colors.length > 1 && (
           <div>
             <p className="font-sans text-body-sm text-leather-brown font-semibold mb-2.5">
-              Colour: <span className="font-normal text-on-surface-variant">{selectedColor}</span>
+              Available colours
             </p>
-            <div className="flex items-center gap-2.5">
-              {colors.map((c) => (
-                <button
-                  key={c.name}
-                  onClick={() => setSelectedColor(c.name)}
-                  aria-label={`Select colour ${c.name}`}
-                  aria-pressed={selectedColor === c.name}
-                  className={`
-                    w-8 h-8 rounded-full border-2 transition-all duration-150
-                    ${selectedColor === c.name ? "border-leather-brown scale-110" : "border-transparent hover:border-outline"}
-                  `}
-                  style={{ backgroundColor: c.hex }}
-                />
+            <div className="flex flex-wrap items-center gap-2.5">
+              {colors.map((color) => (
+                <span
+                  key={color.name}
+                  className="inline-flex items-center gap-2 rounded-full border border-outline px-2.5 py-1.5"
+                >
+                  <span
+                    className="h-4 w-4 rounded-full border border-black/10"
+                    style={{ backgroundColor: color.hex }}
+                    aria-hidden
+                  />
+                  <span className="font-sans text-body-sm text-on-surface-variant">
+                    {color.name}
+                  </span>
+                </span>
               ))}
             </div>
           </div>
         )}
 
-        {/* Size selector — footwear only */}
         {sizes && sizes.length > 0 && (
           <div>
             <div className="flex items-center justify-between mb-2.5">
@@ -110,7 +105,6 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
           </div>
         )}
 
-        {/* Primary CTA */}
         <a
           href={waUrl}
           target="_blank"
@@ -130,18 +124,23 @@ export default function ProductInfo({ product, pageUrl }: ProductInfoProps) {
           Order on WhatsApp
         </a>
 
-        {/* Trust signals */}
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 border-t border-outline">
-          {TRUST_SIGNALS.map((t) => (
-            <span key={t.label} className="flex items-center gap-1.5 font-sans text-body-sm text-on-surface-variant">
-              <span className="text-sage-teal text-[8px]">{t.icon}</span>
-              {t.label}
+          {TRUST_SIGNALS.map((signal) => (
+            <span
+              key={signal.label}
+              className="flex items-center gap-1.5 font-sans text-body-sm text-on-surface-variant"
+            >
+              <span className="text-sage-teal text-[8px]">{signal.icon}</span>
+              {signal.label}
             </span>
           ))}
         </div>
       </div>
 
-      <SizeGuideModal isOpen={showSizeGuide} onClose={() => setShowSizeGuide(false)} />
+      <SizeGuideModal
+        isOpen={showSizeGuide}
+        onClose={() => setShowSizeGuide(false)}
+      />
     </>
   );
 }

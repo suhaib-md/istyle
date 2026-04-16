@@ -7,7 +7,6 @@ import { WhatsAppIcon, ArrowRightIcon } from "@/components/ui/Icons";
 const SLIDES = [
   {
     image: "/images/placeholder/hero-1.jpg",
-    // Warm dark leather-brown placeholder
     bg: "bg-[#2a1208]",
     headline: "Timeless Style,\nMade by Hand.",
     sub: "Handcrafted leather goods from Melvisharam, Tamil Nadu.",
@@ -32,12 +31,22 @@ const FADE_DURATION = 300;
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false
+  );
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function handleChange(event: MediaQueryListEvent) {
+      setReducedMotion(event.matches);
+    }
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   useEffect(() => {
@@ -47,7 +56,7 @@ export default function HeroSection() {
     }
 
     timerRef.current = setInterval(() => {
-      setCurrent((c) => (c + 1) % SLIDES.length);
+      setCurrent((index) => (index + 1) % SLIDES.length);
     }, INTERVAL);
 
     return () => {
@@ -64,25 +73,22 @@ export default function HeroSection() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Slides — crossfade via opacity */}
-      {SLIDES.map((slide, i) => (
+      {SLIDES.map((slide, index) => (
         <div
-          key={i}
-          aria-hidden={i !== current}
+          key={slide.headline}
+          aria-hidden={index !== current}
           className={`
             absolute inset-0
             ${slide.bg}
             transition-opacity
-            ${reducedMotion ? "" : ""}
           `}
           style={{
-            opacity: reducedMotion ? (i === 0 ? 1 : 0) : i === current ? 1 : 0,
+            opacity: reducedMotion ? (index === 0 ? 1 : 0) : index === current ? 1 : 0,
             transitionDuration: `${FADE_DURATION}ms`,
             transitionProperty: "opacity",
-            zIndex: i === current ? 1 : 0,
+            zIndex: index === current ? 1 : 0,
           }}
         >
-          {/* Gradient overlay — stronger at bottom */}
           <div
             className="absolute inset-0 z-10"
             style={{
@@ -93,9 +99,7 @@ export default function HeroSection() {
         </div>
       ))}
 
-      {/* Content — sits above all slides */}
       <div className="relative z-20 h-full flex flex-col justify-end px-6 lg:px-16 pb-20 lg:pb-28 max-w-8xl mx-auto">
-        {/* Badge */}
         <div className="flex mb-5 lg:mb-6">
           <span className="inline-flex items-center gap-2 bg-white/10 border border-white/25 backdrop-blur-sm text-white text-[11px] font-sans font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-sm">
             <WhatsAppIcon size={13} aria-hidden />
@@ -103,7 +107,6 @@ export default function HeroSection() {
           </span>
         </div>
 
-        {/* Headline */}
         <h1
           className="
             font-serif font-bold text-white
@@ -115,12 +118,10 @@ export default function HeroSection() {
           {activeSlide.headline}
         </h1>
 
-        {/* Sub-headline */}
         <p className="font-sans font-light text-white/80 text-body-md lg:text-body-lg max-w-[52ch] mb-10 lg:mb-12">
           {activeSlide.sub}
         </p>
 
-        {/* CTAs */}
         <div className="flex flex-wrap items-center gap-3 lg:gap-4">
           <Link
             href="/collections"
@@ -151,19 +152,18 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* Slide indicators */}
         {!reducedMotion && (
           <div className="flex items-center gap-2 mt-10 lg:mt-12" role="tablist" aria-label="Slide navigation">
-            {SLIDES.map((_, i) => (
+            {SLIDES.map((slide, index) => (
               <button
-                key={i}
+                key={slide.headline}
                 role="tab"
-                aria-selected={i === current}
-                aria-label={`Go to slide ${i + 1}`}
-                onClick={() => setCurrent(i)}
+                aria-selected={index === current}
+                aria-label={`Go to slide ${index + 1}`}
+                onClick={() => setCurrent(index)}
                 className={`
                   h-0.5 transition-all duration-300
-                  ${i === current ? "w-8 bg-white" : "w-4 bg-white/40 hover:bg-white/70"}
+                  ${index === current ? "w-8 bg-white" : "w-4 bg-white/40 hover:bg-white/70"}
                 `}
               />
             ))}
@@ -171,7 +171,6 @@ export default function HeroSection() {
         )}
       </div>
 
-      {/* Scroll hint */}
       <div
         aria-hidden
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden lg:flex flex-col items-center gap-2 text-white/50"

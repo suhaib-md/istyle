@@ -10,16 +10,13 @@ type FormState = "idle" | "loading" | "success";
 export default function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-
-    // Honeypot check — bots fill hidden fields
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
     const honeypot = (form.elements.namedItem("website") as HTMLInputElement | null)?.value;
     if (honeypot) return;
 
     setState("loading");
-    // V1: simulate submission — wire up a real endpoint in Phase 9
     setTimeout(() => setState("success"), 700);
   }
 
@@ -31,8 +28,8 @@ export default function ContactForm() {
           Message received.
         </p>
         <p className="font-sans text-body-md text-on-surface-variant leading-relaxed max-w-[42ch]">
-          We'll get back to you within 24 hours. For anything urgent, the
-          quickest path is WhatsApp — we respond the same day.
+          We&apos;ll get back to you within 24 hours. For anything urgent, the
+          quickest path is WhatsApp â€” we respond the same day.
         </p>
         <a
           href={WA_GENERIC_URL}
@@ -59,7 +56,6 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-      {/* Honeypot — invisible to humans, filled by bots */}
       <input
         name="website"
         type="text"
@@ -69,7 +65,6 @@ export default function ContactForm() {
         autoComplete="off"
       />
 
-      {/* Name */}
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor="contact-name"
@@ -88,7 +83,6 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Phone */}
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor="contact-phone"
@@ -106,7 +100,6 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Message */}
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor="contact-message"
@@ -119,7 +112,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="What would you like to know? Sizing, custom orders, delivery — anything."
+          placeholder="What would you like to know? Sizing, custom orders, delivery â€” anything."
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -137,7 +130,7 @@ export default function ContactForm() {
           transition-colors duration-200
         "
       >
-        {state === "loading" ? "Sending…" : "Send Message"}
+        {state === "loading" ? "Sendingâ€¦" : "Send Message"}
       </button>
     </form>
   );

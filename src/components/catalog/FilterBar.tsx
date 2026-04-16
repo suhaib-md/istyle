@@ -22,7 +22,10 @@ const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: "price-desc", label: "Price ↓" },
 ];
 
-export default function FilterBar({ subcategories, totalProducts }: FilterBarProps) {
+export default function FilterBar({
+  subcategories,
+  totalProducts,
+}: FilterBarProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -34,15 +37,15 @@ export default function FilterBar({ subcategories, totalProducts }: FilterBarPro
   const activeFilterCount = [
     activeSubcategory !== "" ? 1 : 0,
     activeSort !== "featured" ? 1 : 0,
-  ].reduce((a, b) => a + b, 0);
+  ].reduce((total, count) => total + count, 0);
 
   const buildUrl = useCallback(
     (subcategory: string, sort: SortOption) => {
       const params = new URLSearchParams();
       if (subcategory) params.set("subcategory", subcategory);
       if (sort !== "featured") params.set("sort", sort);
-      const qs = params.toString();
-      return qs ? `${pathname}?${qs}` : pathname;
+      const queryString = params.toString();
+      return queryString ? `${pathname}?${queryString}` : pathname;
     },
     [pathname]
   );
@@ -57,10 +60,11 @@ export default function FilterBar({ subcategories, totalProducts }: FilterBarPro
 
   return (
     <>
-      {/* ── Desktop filter bar ────────────────────────────── */}
-      <div className="hidden lg:flex items-center gap-3 flex-wrap py-4 border-b border-outline">
+      <p className="sr-only" aria-live="polite">
+        {totalProducts} products available
+      </p>
 
-        {/* Subcategory chips */}
+      <div className="hidden lg:flex items-center gap-3 flex-wrap py-4 border-b border-outline">
         {subcategories.length > 0 && (
           <div className="flex items-center gap-2 flex-wrap">
             <Chip
@@ -68,35 +72,32 @@ export default function FilterBar({ subcategories, totalProducts }: FilterBarPro
               selected={activeSubcategory === ""}
               onClick={() => setFilter("", activeSort)}
             />
-            {subcategories.map((s) => (
+            {subcategories.map((subcategory) => (
               <Chip
-                key={s.slug}
-                label={s.label}
-                selected={activeSubcategory === s.slug}
-                onClick={() => setFilter(s.slug, activeSort)}
+                key={subcategory.slug}
+                label={subcategory.label}
+                selected={activeSubcategory === subcategory.slug}
+                onClick={() => setFilter(subcategory.slug, activeSort)}
               />
             ))}
           </div>
         )}
 
-        {/* Divider */}
         {subcategories.length > 0 && (
           <div className="h-5 w-px bg-outline mx-1" aria-hidden />
         )}
 
-        {/* Sort chips */}
         <div className="flex items-center gap-2 flex-wrap">
-          {SORT_OPTIONS.map((opt) => (
+          {SORT_OPTIONS.map((option) => (
             <Chip
-              key={opt.value}
-              label={opt.label}
-              selected={activeSort === opt.value}
-              onClick={() => setFilter(activeSubcategory, opt.value)}
+              key={option.value}
+              label={option.label}
+              selected={activeSort === option.value}
+              onClick={() => setFilter(activeSubcategory, option.value)}
             />
           ))}
         </div>
 
-        {/* Clear All */}
         {activeFilterCount > 0 && (
           <button
             onClick={clearAll}
@@ -107,7 +108,6 @@ export default function FilterBar({ subcategories, totalProducts }: FilterBarPro
         )}
       </div>
 
-      {/* ── Mobile filter bar ────────────────────────────── */}
       <div className="flex lg:hidden items-center justify-between gap-3 py-3 border-b border-outline">
         <button
           onClick={() => setSheetOpen(true)}
@@ -123,10 +123,9 @@ export default function FilterBar({ subcategories, totalProducts }: FilterBarPro
           <span className="text-on-surface-variant text-[10px]">▼</span>
         </button>
 
-        {/* Active subcategory label — shows what's applied */}
         {activeSubcategory && (
           <span className="font-sans text-body-sm text-on-surface-variant capitalize">
-            {subcategories.find((s) => s.slug === activeSubcategory)?.label}
+            {subcategories.find((subcategory) => subcategory.slug === activeSubcategory)?.label}
           </span>
         )}
 
@@ -140,17 +139,18 @@ export default function FilterBar({ subcategories, totalProducts }: FilterBarPro
         )}
       </div>
 
-      {/* Bottom sheet — mobile only */}
-      <FilterBottomSheet
-        isOpen={sheetOpen}
-        onClose={() => setSheetOpen(false)}
-        subcategories={subcategories}
-        activeSubcategory={activeSubcategory}
-        activeSort={activeSort}
-        onApply={(subcategory, sort) => {
-          setFilter(subcategory, sort);
-        }}
-      />
+      {sheetOpen && (
+        <FilterBottomSheet
+          isOpen={sheetOpen}
+          onClose={() => setSheetOpen(false)}
+          subcategories={subcategories}
+          activeSubcategory={activeSubcategory}
+          activeSort={activeSort}
+          onApply={(subcategory, sort) => {
+            setFilter(subcategory, sort);
+          }}
+        />
+      )}
     </>
   );
 }

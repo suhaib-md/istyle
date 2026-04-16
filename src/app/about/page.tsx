@@ -12,62 +12,59 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://istyleleathers.vercel.app/about" },
   openGraph: {
     url: "https://istyleleathers.vercel.app/about",
-    title: "Our Story — I Style Leathers",
+    title: "Our Story - I Style Leathers",
     description:
       "Learn about the craft and passion behind I Style Leathers, handcrafted in Melvisharam, Tamil Nadu.",
   },
 };
 
-/* ── Craft process steps ─────────────────────────────────── */
-const CRAFT_STEPS = [
+const craftSteps = [
   {
     number: "01",
     title: "Material Selection",
     description:
-      "Every piece starts with the hide. We select full-grain leathers for their natural texture, durability, and the way they age — developing character rather than cracking.",
+      "Every piece starts with the hide. We select full-grain leathers for their natural texture, durability, and the way they age.",
     image: "/images/placeholder/craft-material.jpg",
   },
   {
     number: "02",
     title: "Cutting & Shaping",
     description:
-      "Patterns are traced and cut by hand. Each cut is deliberate — the grain direction, the strap width, the sole outline. A millimetre off here means an ill-fitting finish.",
+      "Patterns are traced and cut by hand. Each cut is deliberate because fit and finish depend on precision from the very first step.",
     image: "/images/placeholder/craft-cutting.jpg",
   },
   {
     number: "03",
     title: "Stitching",
     description:
-      "We use a saddle-stitch technique: two needles, one thread, each loop tightened by hand. It takes twice as long as machine stitching and lasts twice as long.",
+      "We use a saddle-stitch technique that takes longer than machine stitching and gives the finished piece far more strength.",
     image: "/images/placeholder/craft-stitching.jpg",
   },
   {
     number: "04",
     title: "Finishing",
     description:
-      "Edges are burnished, surfaces conditioned, and hardware fitted. The final inspection is done under daylight — nothing leaves the workshop that we wouldn't wear ourselves.",
+      "Edges are burnished, surfaces conditioned, and hardware fitted before each product is checked in daylight and approved.",
     image: "/images/placeholder/craft-finishing.jpg",
   },
 ];
 
-/* ── Values ─────────────────────────────────────────────── */
-const VALUES = [
+const values = [
   {
     heading: "Handcrafted with Care",
-    body: "Every piece is made by hand in our workshop in Melvisharam. No factory lines, no shortcuts — just skilled hands and the time it takes to do things right.",
+    body: "Every piece is made by hand in our workshop in Melvisharam. No factory lines and no shortcuts.",
   },
   {
     heading: "Available on Order",
-    body: "We make to order. That means your piece is fresh, not sitting on a shelf for months. It also means we can accommodate custom sizing and colour requests.",
+    body: "We make to order so every piece is fresh and we can accommodate custom sizing and colour requests where possible.",
   },
   {
     heading: "Made for Indian Needs",
-    body: "Designed for the Indian climate, the Indian street, and the Indian aesthetic. Our soles handle heat and monsoon. Our silhouettes work with kurtas and trousers alike.",
+    body: "Our products are designed for the Indian climate, the Indian street, and the Indian wardrobe.",
   },
 ];
 
-/* ── Product Tour ────────────────────────────────────────── */
-const PRODUCT_TOUR = [
+const productTour = [
   {
     label: "Footwear",
     href: "/collections/footwear",
@@ -91,20 +88,15 @@ const PRODUCT_TOUR = [
 export default function AboutPage() {
   return (
     <>
-      {/* ══════════════════════════════════════════════════
-          6.2  HERO
-      ══════════════════════════════════════════════════ */}
       <section
         aria-label="About hero"
         className="relative w-full min-h-[70vh] lg:min-h-[80vh] bg-leather-brown flex items-end overflow-hidden"
       >
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: "url('/images/placeholder/about-hero.jpg')" }}
           aria-hidden
         />
-        {/* Gradient */}
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(to top, rgba(53,23,16,0.92) 0%, rgba(53,23,16,0.3) 60%, rgba(53,23,16,0.1) 100%)" }}
@@ -125,14 +117,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          6.3  ORIGIN STORY
-      ══════════════════════════════════════════════════ */}
       <section aria-label="Origin story" className="py-16 lg:py-24 bg-warm-cream">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-
-            {/* Image */}
             <AnimatedSection className="relative">
               <div className="aspect-4/5 bg-surface-high overflow-hidden max-w-130 mx-auto lg:mx-0">
                 <div
@@ -144,7 +131,6 @@ export default function AboutPage() {
               </div>
             </AnimatedSection>
 
-            {/* Text */}
             <AnimatedSection delay={150}>
               <p className="label-sm-caps text-sage-teal mb-4">Melvisharam, Tamil Nadu</p>
               <h2 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight mb-6">
@@ -152,39 +138,28 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 font-sans text-body-lg text-on-surface-variant leading-relaxed">
                 <p>
-                  I Style Leathers started the way most honest things do — with a skill
-                  passed from one generation to the next, and a dissatisfaction with what
-                  the market was offering. The sandals on the shelves were either too cheap
-                  to last or too expensive to justify. We knew we could do better.
+                  I Style Leathers started with a workshop skill passed from one
+                  generation to the next and a belief that better leather goods
+                  should be available without retail markup.
                 </p>
                 <p>
-                  Our workshop is in Melvisharam, a town in Ranipet District with a long
-                  tradition of leather craft. Every cutter, every stitcher, every finisher
-                  here has spent years learning what we do. The leather we use is selected
-                  for its grain and its grain alone — nothing that will crack at the fold
-                  points after six months of wear.
+                  Our workshop is in Melvisharam, a town in Ranipet District
+                  with a long tradition of leather craft. Every cutter, every
+                  stitcher, and every finisher here has spent years learning the trade.
                 </p>
                 <p>
-                  We sell directly. No retail markup, no middleman. You place an order on
-                  WhatsApp, we make it, we ship it. The price you pay reflects the leather
-                  and the labour — not the margin of a shop that never touched what it sold.
+                  We sell directly. You place an order on WhatsApp, we make it,
+                  and we ship it. The price reflects the leather and the labour,
+                  not the cost of a showroom.
                 </p>
               </div>
             </AnimatedSection>
-
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          6.4  THE CRAFT — dark section, stagger reveal
-      ══════════════════════════════════════════════════ */}
-      <section
-        aria-label="Our craft process"
-        className="py-16 lg:py-24 bg-leather-brown"
-      >
+      <section aria-label="Our craft process" className="py-16 lg:py-24 bg-leather-brown">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
-
           <AnimatedSection className="mb-12 lg:mb-16">
             <p className="label-sm-caps text-sage-teal mb-4">The Process</p>
             <h2 className="font-serif font-bold text-white text-headline-md lg:text-headline-lg leading-tight max-w-[20ch]">
@@ -193,9 +168,8 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {CRAFT_STEPS.map((step, i) => (
-              <AnimatedSection key={step.number} delay={i * 150}>
-                {/* Step image */}
+            {craftSteps.map((step, index) => (
+              <AnimatedSection key={step.number} delay={index * 150}>
                 <div className="aspect-4/3 bg-warm-cream/10 overflow-hidden mb-5">
                   <div
                     className="w-full h-full bg-cover bg-center opacity-70"
@@ -203,18 +177,12 @@ export default function AboutPage() {
                     aria-hidden
                   />
                 </div>
-
-                {/* Step number */}
                 <p className="font-serif font-bold text-[3rem] leading-none text-white/20 mb-2 select-none">
                   {step.number}
                 </p>
-
-                {/* Heading */}
                 <h3 className="font-serif font-bold text-white text-headline-sm mb-2">
                   {step.title}
                 </h3>
-
-                {/* Description */}
                 <p className="font-sans text-body-sm text-white/65 leading-relaxed">
                   {step.description}
                 </p>
@@ -224,12 +192,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          6.5  PRODUCT TOUR
-      ══════════════════════════════════════════════════ */}
       <section aria-label="Product categories" className="py-16 lg:py-24 bg-parchment">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
-
           <AnimatedSection className="mb-10 lg:mb-12">
             <p className="label-sm-caps text-sage-teal mb-4">What We Make</p>
             <h2 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg">
@@ -238,17 +202,16 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
-            {PRODUCT_TOUR.map((cat, i) => (
-              <AnimatedSection key={cat.href} delay={i * 100}>
+            {productTour.map((category, index) => (
+              <AnimatedSection key={category.href} delay={index * 100}>
                 <Link
-                  href={cat.href}
-                  className={`group relative block overflow-hidden h-56 lg:h-72 ${cat.bg}`}
-                  aria-label={`Shop ${cat.label}`}
+                  href={category.href}
+                  className={`group relative block overflow-hidden h-56 lg:h-72 ${category.bg}`}
+                  aria-label={`Shop ${category.label}`}
                 >
-                  {/* Placeholder bg image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center opacity-50 transition-transform duration-700 group-hover:scale-[1.04]"
-                    style={{ backgroundImage: `url('/images/placeholder/category-${cat.label.toLowerCase()}.jpg')` }}
+                    style={{ backgroundImage: `url('/images/placeholder/category-${category.label.toLowerCase()}.jpg')` }}
                     aria-hidden
                   />
                   <div
@@ -259,10 +222,10 @@ export default function AboutPage() {
 
                   <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
                     <h3 className="font-serif font-bold text-white text-headline-sm mb-1">
-                      {cat.label}
+                      {category.label}
                     </h3>
                     <p className="font-sans text-body-sm text-white/70 mb-3">
-                      {cat.description}
+                      {category.description}
                     </p>
                     <span className="inline-flex items-center gap-1.5 font-sans font-semibold text-label-lg text-white/90 group-hover:gap-3 transition-all duration-200">
                       Shop Now <ArrowRightIcon size={14} aria-hidden />
@@ -275,29 +238,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          6.6  VALUES
-      ══════════════════════════════════════════════════ */}
       <section aria-label="Our values" className="py-16 lg:py-24 bg-warm-cream">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
-
           <AnimatedSection className="mb-10 lg:mb-14 max-w-[42ch]">
             <p className="label-sm-caps text-sage-teal mb-4">What We Stand For</p>
             <h2 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight">
-              Three Things We Don't Compromise On
+              Three Things We Do Not Compromise On
             </h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-            {VALUES.map((v, i) => (
-              <AnimatedSection key={v.heading} delay={i * 100}>
-                {/* Decorative rule */}
+            {values.map((value, index) => (
+              <AnimatedSection key={value.heading} delay={index * 100}>
                 <div className="w-10 h-0.5 bg-sage-teal mb-6" />
                 <h3 className="font-serif font-bold text-leather-brown text-headline-sm mb-3">
-                  {v.heading}
+                  {value.heading}
                 </h3>
                 <p className="font-sans text-body-md text-on-surface-variant leading-relaxed">
-                  {v.body}
+                  {value.body}
                 </p>
               </AnimatedSection>
             ))}
@@ -305,22 +263,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          6.7  CLOSING CTA
-      ══════════════════════════════════════════════════ */}
       <section aria-label="Call to action" className="py-16 lg:py-24 bg-surface-low">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="flex flex-col items-center text-center max-w-140 mx-auto">
-
             <p className="label-sm-caps text-sage-teal mb-4">Ready?</p>
-
             <h2 className="font-serif font-bold text-leather-brown text-headline-md lg:text-headline-lg leading-tight mb-4">
               Find Something Made for You
             </h2>
-
             <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed mb-10 max-w-[44ch]">
               Browse the collection, pick what you love, and send us a message on
-              WhatsApp. We'll take it from there.
+              WhatsApp. We&apos;ll take it from there.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -353,7 +305,6 @@ export default function AboutPage() {
                 Order on WhatsApp
               </WhatsAppLink>
             </div>
-
           </AnimatedSection>
         </div>
       </section>

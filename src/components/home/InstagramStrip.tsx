@@ -1,14 +1,14 @@
 import { InstagramIcon } from "@/components/ui/Icons";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import LiveInstagramFeed from "@/components/home/LiveInstagramFeed";
-
-const BEHOLD_FEED_ID = "LfNYDEl4t0BAZQfbq1fh";
+import { instagramPosts } from "@/data/instagram";
 
 export default function InstagramStrip() {
+  const beholdFeedId = process.env.NEXT_PUBLIC_BEHOLD_FEED_ID?.trim();
+
   return (
     <section aria-label="Instagram feed" className="py-16 lg:py-24 bg-warm-cream">
       <div className="max-w-8xl mx-auto">
-        {/* Header */}
         <AnimatedSection className="px-6 lg:px-12 mb-8 lg:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <p className="label-sm-caps text-sage-teal mb-2">Follow Along</p>
@@ -33,9 +33,28 @@ export default function InstagramStrip() {
           </a>
         </AnimatedSection>
 
-        {/* Live Behold feed */}
         <div className="px-6 lg:px-12">
-          <LiveInstagramFeed feedId={BEHOLD_FEED_ID} />
+          {beholdFeedId ? (
+            <LiveInstagramFeed feedId={beholdFeedId} />
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4">
+              {instagramPosts.map((post) => (
+                <a
+                  key={post.id}
+                  href={post.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block aspect-square overflow-hidden bg-surface-mid"
+                  aria-label={post.alt}
+                >
+                  <div
+                    className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url('${post.src}')` }}
+                  />
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

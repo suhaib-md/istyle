@@ -6,13 +6,13 @@ import { WA_GENERIC_URL, WA_PHONE_DISPLAY } from "@/lib/whatsapp";
 import WhatsAppLink from "@/components/ui/WhatsAppLink";
 
 export const metadata: Metadata = {
-  title: "Contact I Style Leathers — WhatsApp & Instagram",
+  title: "Contact I Style Leathers - WhatsApp & Instagram",
   description:
     "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyle_leathers.",
   alternates: { canonical: "https://istyleleathers.vercel.app/contact" },
   openGraph: {
     url: "https://istyleleathers.vercel.app/contact",
-    title: "Contact I Style Leathers — WhatsApp & Instagram",
+    title: "Contact I Style Leathers - WhatsApp & Instagram",
     description:
       "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyle_leathers.",
   },
@@ -21,9 +21,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* ══════════════════════════════════════════════════
-          HEADER
-      ══════════════════════════════════════════════════ */}
       <section className="py-16 lg:py-24 bg-warm-cream">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <AnimatedSection>
@@ -32,21 +29,16 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="font-sans font-light text-body-lg text-on-surface-variant max-w-[50ch] leading-relaxed">
-              We're a small workshop in Melvisharam, not a call centre. The
-              quickest way to reach us is WhatsApp — we respond the same day.
+              We&apos;re a small workshop in Melvisharam, not a call centre. The
+              quickest way to reach us is WhatsApp - we respond the same day.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          THREE CONTACT METHODS
-      ══════════════════════════════════════════════════ */}
       <section aria-label="Contact methods" className="py-12 lg:py-16 bg-parchment">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-8">
-
-            {/* ── WhatsApp ─────────────────────────────── */}
             <AnimatedSection delay={0}>
               <div className="bg-warm-cream border border-outline p-6 lg:p-8 flex flex-col gap-5 h-full">
                 <div className="w-12 h-12 bg-[#25D366] flex items-center justify-center shrink-0">
@@ -80,7 +72,6 @@ export default function ContactPage() {
               </div>
             </AnimatedSection>
 
-            {/* ── Instagram ────────────────────────────── */}
             <AnimatedSection delay={100}>
               <div className="bg-warm-cream border border-outline p-6 lg:p-8 flex flex-col gap-5 h-full">
                 <div className="w-12 h-12 bg-leather-brown flex items-center justify-center shrink-0">
@@ -117,24 +108,10 @@ export default function ContactPage() {
               </div>
             </AnimatedSection>
 
-            {/* ── Email ────────────────────────────────── */}
             <AnimatedSection delay={200}>
               <div className="bg-warm-cream border border-outline p-6 lg:p-8 flex flex-col gap-5 h-full">
                 <div className="w-12 h-12 bg-surface-high flex items-center justify-center shrink-0">
-                  {/* Mail icon — inline SVG */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width={22}
-                    height={22}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-leather-brown"
-                    aria-hidden
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={22} height={22} fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="text-leather-brown" aria-hidden>
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
@@ -166,28 +143,21 @@ export default function ContactPage() {
                 </a>
               </div>
             </AnimatedSection>
-
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          CONTACT FORM + LOCATION
-      ══════════════════════════════════════════════════ */}
       <section aria-label="Contact form and location" className="py-16 lg:py-24 bg-warm-cream">
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-            {/* ── Form ─────────────────────────────────── */}
             <AnimatedSection>
               <p className="label-sm-caps text-sage-teal mb-4">Send a Message</p>
               <h2 className="font-serif font-bold text-leather-brown text-headline-md mb-8">
-                We'll Reply Within 24 Hours
+                We&apos;ll Reply Within 24 Hours
               </h2>
               <ContactForm />
             </AnimatedSection>
 
-            {/* ── Location + Map ───────────────────────── */}
             <AnimatedSection delay={150}>
               <p className="label-sm-caps text-sage-teal mb-4">Where We Are</p>
               <h2 className="font-serif font-bold text-leather-brown text-headline-md mb-3">
@@ -197,24 +167,22 @@ export default function ContactPage() {
                 Melvisharam, Ranipet District, Tamil Nadu, India.
               </p>
               <p className="font-sans text-body-sm text-on-surface-variant/80 leading-relaxed mb-8">
-                Our workshop is not open for walk-ins — all orders go through
+                Our workshop is not open for walk-ins - all orders go through
                 WhatsApp. Pan-India delivery available.
               </p>
 
-              {/* Google Maps embed — general area, no API key needed */}
               <div className="aspect-4/3 w-full overflow-hidden border border-outline">
                 <iframe
                   src="https://maps.google.com/maps?q=Melvisharam,+Tamil+Nadu,+India&t=m&z=13&output=embed&iwloc=near"
                   width="100%"
                   height="100%"
                   loading="lazy"
-                  title="I Style Leathers workshop location — Melvisharam, Tamil Nadu"
+                  title="I Style Leathers workshop location - Melvisharam, Tamil Nadu"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="border-0"
                 />
               </div>
             </AnimatedSection>
-
           </div>
         </div>
       </section>

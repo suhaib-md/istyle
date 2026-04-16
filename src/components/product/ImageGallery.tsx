@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { ChevronDownIcon } from "@/components/ui/Icons";
 
 interface ImageGalleryProps {
   images: string[];
