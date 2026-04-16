@@ -1,6 +1,6 @@
 "use client";
 
-import Script from "next/script";
+import { useEffect } from "react";
 
 // Declare the Behold web component for TypeScript
 declare global {
@@ -15,14 +15,13 @@ declare global {
 }
 
 export default function LiveInstagramFeed({ feedId }: { feedId: string }) {
-  return (
-    <>
-      <Script
-        src="https://w.behold.so/widget.js"
-        type="module"
-        strategy="lazyOnload"
-      />
-      <behold-widget feed-id={feedId} />
-    </>
-  );
+  useEffect(() => {
+    // Matches Behold's own embed code exactly
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src = "https://w.behold.so/widget.js";
+    document.head.appendChild(script);
+  }, []);
+
+  return <behold-widget feed-id={feedId} />;
 }
