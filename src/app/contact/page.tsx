@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "Contact I Style Leathers — WhatsApp & Instagram",
   description:
     "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyleLeathers.",
-  alternates: { canonical: "https://istyle.vercel.app/contact" },
+  alternates: { canonical: "https://istyleleathers.vercel.app/contact" },
   openGraph: {
-    url: "https://istyle.vercel.app/contact",
+    url: "https://istyleleathers.vercel.app/contact",
     title: "Contact I Style Leathers — WhatsApp & Instagram",
     description:
       "Get in touch with I Style Leathers on WhatsApp (+91 9842376554) or Instagram @istyleLeathers.",

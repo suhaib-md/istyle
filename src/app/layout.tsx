@@ -11,7 +11,7 @@ import BottomTabBar from "@/components/layout/BottomTabBar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFAB from "@/components/layout/WhatsAppFAB";
 
-const SITE_URL = "https://istyle.vercel.app";
+const SITE_URL = "https://istyleleathers.vercel.app";
 
 export const metadata: Metadata = {
   title: {

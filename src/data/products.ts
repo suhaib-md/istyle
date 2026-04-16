@@ -160,7 +160,13 @@ export const products: Product[] = [
     price: 8500,
     leatherType: "Textured and Full Grain Trim",
     colors: [{ name: "Black and Tan", hex: "#1a1a1a" }],
-    images: [PH_PORTRAIT, PH_SIDE, PH_DETAIL, PH_LIFESTYLE, PH_FLATLAY],
+    images: [
+      "/images/bags/briefcase-black-tan-front.jpg",
+      "/images/bags/briefcase-black-tan-side.jpg",
+      PH_DETAIL,
+      PH_LIFESTYLE,
+      PH_FLATLAY,
+    ],
     status: "available-on-order",
     tags: ["new", "featured"],
     featured: true,
@@ -187,22 +193,28 @@ export const products: Product[] = [
     featured: false,
   },
   {
-    slug: "backpack-navy-perforated",
+    slug: "backpack-perforated-brown",
     name: "Perforated Leather Backpack",
     category: "bags",
     subcategory: "backpacks",
     shortDescription:
-      "Navy and brown perforated leather with a silhouette that goes from office to weekend without skipping a beat.",
+      "Brown perforated leather with a silhouette that goes from office to weekend without skipping a beat.",
     longDescription:
-      "The Perforated Leather Backpack is the most versatile piece in our bag collection. The perforated panel running down the front pocket adds visual texture and a breath of lightness that stops the backpack from feeling heavy before you have even loaded it. The navy and brown combination is unusual and intentional - two colours that should not work together but somehow do. Two main compartments handle your laptop and daily essentials. The padded shoulder straps are wide enough to wear comfortably over a formal shirt without leaving marks. Made for the professional who refuses to carry a boring bag.",
+      "The Perforated Leather Backpack is the most versatile piece in our bag collection. The perforated panel running down the front pocket adds visual texture and a breath of lightness that stops the backpack from feeling heavy before you have even loaded it. Two main compartments handle your laptop and daily essentials. The padded shoulder straps are wide enough to wear comfortably over a formal shirt without leaving marks. Made for the professional who refuses to carry a boring bag.",
     materialsAndCare:
-      "Body: Full-grain perforated leather (navy and brown). Lining: Cotton canvas. Hardware: Antique brass zips. Padded laptop sleeve (fits up to 15 inches). Padded shoulder straps. Care: Wipe with damp cloth. Condition regularly.",
+      "Body: Full-grain perforated leather (brown). Lining: Cotton canvas. Hardware: Antique brass zips. Padded laptop sleeve (fits up to 15 inches). Padded shoulder straps. Care: Wipe with damp cloth. Condition regularly.",
     dimensions:
       "32cm x 42cm x 14cm (W x H x D). Laptop compartment: fits up to 15 inches. Weight: approx. 1.1kg.",
     price: 9200,
     leatherType: "Perforated Full Grain",
-    colors: [{ name: "Navy and Brown", hex: "#1b3a5c" }],
-    images: [PH_PORTRAIT, PH_SIDE, PH_DETAIL, PH_LIFESTYLE, PH_FLATLAY],
+    colors: [{ name: "Brown", hex: "#5c3317" }],
+    images: [
+      "/images/bags/backpack-perforated-brown.jpg",
+      PH_SIDE,
+      PH_DETAIL,
+      PH_LIFESTYLE,
+      PH_FLATLAY,
+    ],
     status: "available-on-order",
     tags: ["new"],
     featured: false,
@@ -223,10 +235,97 @@ export const products: Product[] = [
     price: 14500,
     leatherType: "Full Grain",
     colors: [{ name: "Dark Espresso", hex: "#2c1810" }],
-    images: [PH_PORTRAIT, PH_SIDE, PH_DETAIL, PH_LIFESTYLE, PH_FLATLAY],
+    images: [
+      "/images/bags/weekender-espresso.jpg",
+      PH_SIDE,
+      PH_DETAIL,
+      PH_LIFESTYLE,
+      PH_FLATLAY,
+    ],
     status: "available-on-order",
     tags: ["limited"],
     featured: true,
+  },
+  {
+    slug: "weekender-camel-tan",
+    name: "Weekender Duffel - Camel Tan",
+    category: "bags",
+    subcategory: "weekenders",
+    shortDescription:
+      "Camel tan smooth leather, clean lines, brass hardware. The bag that makes arriving somewhere feel like an occasion.",
+    longDescription:
+      "The Weekender Duffel in Camel Tan is for those who prefer a lighter, warmer palette. The camel leather is smooth full-grain — no embossing, no pattern — just the natural surface of a well-selected hide. It will lighten slightly in sunlight and develop a beautiful honey tone over years of travel. The construction is the same as our Espresso Weekender: wide-mouth opening, two exterior pockets, hand-stitched handles, antique brass hardware. This is a bag that improves with every trip you take it on.",
+    materialsAndCare:
+      "Body: Full-grain leather (camel tan). Lining: Waxed cotton canvas. Hardware: Antique brass. Detachable and adjustable shoulder strap. Care: Condition monthly. Keep out of direct sunlight when storing.",
+    dimensions:
+      "52cm x 30cm x 25cm (W x H x D). Capacity: approx. 40L. Weight: approx. 1.4kg.",
+    price: 14500,
+    leatherType: "Full Grain Smooth",
+    colors: [{ name: "Camel Tan", hex: "#c8934a" }],
+    images: [
+      "/images/bags/weekender-camel-tan.jpg",
+      PH_SIDE,
+      PH_DETAIL,
+      PH_LIFESTYLE,
+      PH_FLATLAY,
+    ],
+    status: "available-on-order",
+    tags: ["new"],
+    featured: false,
+  },
+  {
+    slug: "weekender-canvas-explorer",
+    name: "Canvas & Leather Explorer Duffel",
+    category: "bags",
+    subcategory: "weekenders",
+    shortDescription:
+      "Green canvas body with tan leather handles and trim. Built for the journey as much as the destination.",
+    longDescription:
+      "The Canvas & Leather Explorer Duffel is the bag for those who want something a little different. The olive green canvas body is waxed for weather resistance, while the tan full-grain leather handles and base trim add the craft detail that makes this more than a simple travel bag. The contrast between canvas and leather gives it a timeless explorer aesthetic — at home on a mountain road or a city train. Roomy enough for three days of travel, structured enough to sit upright at a luggage rack. The leather handles are hand-stitched with the same saddle-stitch technique we use on all our bags.",
+    materialsAndCare:
+      "Body: Waxed canvas (olive green). Trim and handles: Full-grain tan leather. Lining: Cotton canvas. Hardware: Antique brass. Detachable shoulder strap. Care: Wipe canvas with damp cloth. Condition leather trim monthly.",
+    dimensions:
+      "50cm x 28cm x 24cm (W x H x D). Capacity: approx. 35L. Weight: approx. 1.3kg.",
+    price: 13500,
+    leatherType: "Canvas & Full Grain Leather Trim",
+    colors: [{ name: "Olive Green & Tan", hex: "#4a5c3a" }],
+    images: [
+      "/images/bags/weekender-canvas-green.jpg",
+      PH_SIDE,
+      PH_DETAIL,
+      PH_LIFESTYLE,
+      PH_FLATLAY,
+    ],
+    status: "available-on-order",
+    tags: ["new", "featured"],
+    featured: true,
+  },
+  {
+    slug: "document-case-navy",
+    name: "Minimalist Document & Laptop Case",
+    category: "bags",
+    subcategory: "briefcases",
+    shortDescription:
+      "Navy flat leather case for a laptop and documents. The slimmest thing you can carry your work in.",
+    longDescription:
+      "The Minimalist Document & Laptop Case is for the days when a full briefcase is too much. Slim enough to tuck under your arm, flat enough to slip into an overhead locker without a second thought. The navy leather is smooth full-grain — no hardware, no fuss, just clean lines and a magnetic flap closure. Inside, a padded sleeve fits a 13-inch laptop snugly; the main compartment takes a day's worth of documents. The handles are low-profile, making this as easy to carry as a folder and as considered as a briefcase.",
+    materialsAndCare:
+      "Body: Full-grain smooth leather (navy). Lining: Cotton canvas. Closure: Concealed magnetic snap. Fits laptops up to 13 inches. Care: Wipe with damp cloth. Condition monthly.",
+    dimensions:
+      "36cm x 26cm x 3cm (W x H x D). Fits laptops up to 13 inches. Weight: approx. 500g.",
+    price: 6500,
+    leatherType: "Full Grain Smooth",
+    colors: [{ name: "Navy", hex: "#1b3a5c" }],
+    images: [
+      "/images/bags/document-case-navy.jpg",
+      PH_SIDE,
+      PH_DETAIL,
+      PH_LIFESTYLE,
+      PH_FLATLAY,
+    ],
+    status: "available-on-order",
+    tags: ["new"],
+    featured: false,
   },
 
   // ACCESSORIES

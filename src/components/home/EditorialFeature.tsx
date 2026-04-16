@@ -16,7 +16,7 @@ const EDITORIAL_PRODUCT = {
 export default function EditorialFeature() {
   const waUrl = buildWhatsAppURL(
     `${EDITORIAL_PRODUCT.name} — ${EDITORIAL_PRODUCT.descriptor}`,
-    `https://istyle.vercel.app/products/${EDITORIAL_PRODUCT.slug}`
+    `https://istyleleathers.vercel.app/products/${EDITORIAL_PRODUCT.slug}`
   );
 
   return (

@@ -9,7 +9,7 @@ import ProductAccordion from "@/components/product/ProductAccordion";
 import RelatedProducts from "@/components/product/RelatedProducts";
 import StickyOrderBar from "@/components/product/StickyOrderBar";
 
-const SITE_URL = "https://istyle.vercel.app";
+const SITE_URL = "https://istyleleathers.vercel.app";
 
 type Params = { slug: string };
 
