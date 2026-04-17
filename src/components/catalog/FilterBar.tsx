@@ -23,12 +23,12 @@ const SORT_OPTIONS: { value: SortOption; label: string }[] = [
 ];
 
 export default function FilterBar({
-  subcategories,
+  subcategories, 
   totalProducts,
 }: FilterBarProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams();   
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const activeSubcategory = searchParams.get("subcategory") ?? "";
